@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//This class is an example of a object pooler. This implementation is not hooked up to anything currently
+//Either this script needs to be configured to work along the  Tile Spawner or the Tile Spawner needs to utilize object pooling
+//Through this class or a definition of its own.
 [System.Serializable]
 public class ObjectPoolItem
 {

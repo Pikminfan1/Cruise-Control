@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//THis is where the logic lives for building a 2D tiled grid.
+//The chunks are picked based on the entry and exit vectors and are placed acordingly
 public class LevelLayoutGenerator : MonoBehaviour
 {
     public LevelChunkData[] levelChunkData;

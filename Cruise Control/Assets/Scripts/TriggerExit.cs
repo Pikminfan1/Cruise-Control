@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class is used for updating tiles when the car passes through a trigger
+//NOTE: This method currently is not using Object Pooling and should be updated to fix
+//that, also CarTag is a weird way of getting a tag fo an object, will prolly change it
+//In the Inspector and add the component to Awake()
 public class TriggerExit : MonoBehaviour
 {
     public float delay = 5f;

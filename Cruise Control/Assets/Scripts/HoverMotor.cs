@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//This class Was lifted from a tutorial and was used for debugging but is not in use currently, Will likely delete this file
+//Once PlayerController.cs is functioning
 public class HoverMotor : MonoBehaviour
 {
 
