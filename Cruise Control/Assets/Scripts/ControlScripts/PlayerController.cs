@@ -5,17 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody PlayerRB;
+    public PlayerStats stats;
     public int maxSpeed = 100;
     public float currentSpeed = 0f;
     public float turnSpeed = 5f;
     public float smoothing = 0.5f;
 
     public bool cruiseControlStatus = false;
-    public int cruiseControlSpeed = 0;
+    public float cruiseControlSpeed = 0;
 
     private void Awake()
     {
         PlayerRB = GetComponent<Rigidbody>();
+        stats.test = true;
     }
     void Start()
     {
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     //Actual button mappins in the input manager, these are merely for prototyping
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (cruiseControlSpeed < maxSpeed)
@@ -52,8 +55,8 @@ public class PlayerController : MonoBehaviour
                 PlayerRB.transform.Rotate(new Vector3(0, -2));
             }
         }
-
-        PlayerRB.AddRelativeForce(Vector3.forward * cruiseControlSpeed);
+        */
+        PlayerRB.AddRelativeForce(Vector3.forward *Mathf.Clamp(cruiseControlSpeed * Time.deltaTime,0,cruiseControlSpeed));
         
     }
 }
