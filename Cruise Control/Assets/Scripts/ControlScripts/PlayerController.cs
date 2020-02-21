@@ -2,61 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script will eventually be used for actions that don't involve driving such as the wind shield wipers and windows
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody PlayerRB;
-    public PlayerStats stats;
-    public int maxSpeed = 100;
-    public float currentSpeed = 0f;
-    public float turnSpeed = 5f;
-    public float smoothing = 0.5f;
+    //public PlayerStats stats;
+    //Controls controllerTest;
 
-    public bool cruiseControlStatus = false;
-    public float cruiseControlSpeed = 0;
+    Controls controllerTest;
+    Vector2 lookRaw;
+    
+    
 
+    
     private void Awake()
     {
         PlayerRB = GetComponent<Rigidbody>();
-        stats.test = true;
+        //stats.test = true;
+
+        controllerTest = new Controls();
+        controllerTest.BaseMovement.Move.performed += ctx => lookRaw = ctx.ReadValue<Vector2>();
     }
-    void Start()
+    private void OnEnable()
     {
-        
+        controllerTest.Enable();
+    }
+    private void OnDisable()
+    {
+        controllerTest.Disable();
     }
 
-    // SUPER TEMPORARY PLEASE FORGIV ME These inputs should be replaced with 
-    //Actual button mappins in the input manager, these are merely for prototyping
-    void Update()
+    bool isCounterClockwise(Vector2 prevPos, Vector2 currPos)
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (cruiseControlSpeed < maxSpeed)
-            {
-                cruiseControlSpeed += 1;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if(cruiseControlSpeed > 0)
-            {
-                cruiseControlSpeed -= 1;
-            }
+        float prevAngle = Vector2.Angle(Vector2.zero, prevPos);
+        float currAngle = Vector2.Angle(Vector2.zero, prevPos);
 
-        }
-        if (Input.GetKeyDown(KeyCode.A))
+        if(currAngle >= 0 && currAngle <= 45 && 
+            prevAngle <= 359 && prevAngle>= 315)
         {
-            PlayerRB.transform.Rotate(new Vector3(0, 2));
+            return true;
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if(currAngle - prevAngle > 0)
             {
-                PlayerRB.transform.Rotate(new Vector3(0, -2));
+                return true;
             }
         }
-        */
-        PlayerRB.AddRelativeForce(Vector3.forward *Mathf.Clamp(cruiseControlSpeed * Time.deltaTime,0,cruiseControlSpeed));
-        
+        return false;
     }
+    
+    
 }
