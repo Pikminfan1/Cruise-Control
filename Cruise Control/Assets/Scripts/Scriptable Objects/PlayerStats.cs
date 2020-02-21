@@ -29,6 +29,10 @@ public class PlayerStats : ScriptableObject
         isWindowRollToggle = false;
 
     }
+    public float currentStress()
+    {
+        return stress / 100f;
+    }
 
 
 }

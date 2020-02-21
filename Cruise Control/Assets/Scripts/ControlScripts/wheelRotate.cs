@@ -24,14 +24,17 @@ public class wheelRotate : MonoBehaviour
     public float maxSteerAngle = 30;
     //Used to judge how far to steer
     float steerMag = 0;
+    //Used to determine direction of acceleration
+    public float accelerationDirection = 0;
     //Start gets the wheelCollider component
+
     void Start()
     {
         wc = this.GetComponent<WheelCollider>();
     }
 
     //Decides whether car should accelerate, deccelerate, or not move as well as what direction the wheels should face
-    //If tehy are the front wheels
+    //If they are the front wheels
     void Go(float accel,float steering)
     {
         accel = Mathf.Clamp(accel, -1, 1);
@@ -48,7 +51,7 @@ public class wheelRotate : MonoBehaviour
     {
         //Debug.Log(wc.motorTorque);
         //Set to auto accelerate currently
-        Go(1,steerVec.x);
+        Go(accelerationDirection,steerVec.x);
         steerMag += steerVec.x;
 
         //Tester code for brakes, intend to implement "natural" deceleration in lieu of brakes

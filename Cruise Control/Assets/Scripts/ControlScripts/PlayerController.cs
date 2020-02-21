@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         controllerTest.Disable();
     }
 
+    //Method purpose is to determine if the player is rotating the joystick and in which direction in order to roll the window up or down
     bool isCounterClockwise(Vector2 prevPos, Vector2 currPos)
     {
         float prevAngle = Vector2.Angle(Vector2.zero, prevPos);

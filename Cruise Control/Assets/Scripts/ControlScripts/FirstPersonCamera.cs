@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Controller used for in-cabin first person camera movement for some reason when this script is made a child
-//Of a parent containing a rigid body, the camera controller will freak out at the x rotation minimums and maximums
-//Needs to be investigated
+//Controller used for in-cabin first person camera movement
+
 public class FirstPersonCamera : MonoBehaviour
 {
 
@@ -32,10 +31,10 @@ public class FirstPersonCamera : MonoBehaviour
     public PlayerStats stats;
 
     //Holds reference to parent object so x rotation doesnt affect the y rotation
-    GameObject character;
+    Transform parentTrans;
     //Used for new input manager
     Controls controllerTest;
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         //This used the Legacy input system
         //var md = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -55,16 +54,13 @@ public class FirstPersonCamera : MonoBehaviour
 
             //Preform a local rotation on the camera for y and the parent for x
             transform.localRotation = Quaternion.AngleAxis(-lookSmooth.y, Vector3.right);
-            character.transform.localRotation = Quaternion.AngleAxis(lookSmooth.x, character.transform.up);
+            parentTrans.transform.localRotation = Quaternion.AngleAxis(lookSmooth.x, Vector3.up);
           
         }
 
     }
 
-    private void Start()
-    {
-        //character = this.transform.parent.gameObject;
-    }
+
     //Awake is used to setup callbacks for Input and grab the parent object
     private void Awake()
     {
@@ -73,7 +69,7 @@ public class FirstPersonCamera : MonoBehaviour
         controllerTest.BaseMovement.ToggleWindow.performed += ctx => stats.isWindowRollToggle = true;
         controllerTest.BaseMovement.ToggleWindow.canceled += ctx => stats.isWindowRollToggle = false;
 
-        character = this.transform.parent.gameObject;
+        parentTrans = this.transform.parent;
     }
 
     //Enable/Disable used to turn on/off Player input
@@ -88,6 +84,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     //This method takes a given angle and ensures it falls between -360 and 360
     //And between the given min and max values
+    //Really its just Mathf.Clamp but ensures first that the value is a valid rotation
     public static float ClampAngle(float angle, float min, float max)
     {
         angle = angle % 360;

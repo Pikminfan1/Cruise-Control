@@ -296,6 +296,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6041453613899205488, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: torque
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453613899205488, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: accelerationDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453613899205488, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614182709196, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: torque
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614182709196, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: accelerationDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614182709196, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614878902282, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: torque
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614878902282, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: accelerationDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453614878902282, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453615027006723, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: torque
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453615027006723, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: accelerationDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453615027006723, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6041453615578331458, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
         type: 3}
       propertyPath: m_Name
@@ -355,6 +415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041453615639039280, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: smoothing
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
