@@ -46,7 +46,7 @@ public class wheelRotate : MonoBehaviour
             wc.steerAngle = steering;
         }
     }
-    //Fixed Update will call
+    //Fixed Update will call y
     void FixedUpdate()
     {
         //Debug.Log(wc.motorTorque);
