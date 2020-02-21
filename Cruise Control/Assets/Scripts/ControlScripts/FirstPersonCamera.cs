@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Controller used for in-cabin first person camera movement
+//Controller used for in-cabin first person camera movement for some reason when this script is made a child
+//Of a parent containing a rigid body, the camera controller will freak out at the x rotation minimums and maximums
+//Needs to be investigated
 public class FirstPersonCamera : MonoBehaviour
 {
 

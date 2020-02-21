@@ -2,16 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Script used to drive wheel colliders
+//Currently designed to be attatched to every wheel individually, with some heirachy changes
+//In the editor, this script should be used to control all 4 at once.
 public class wheelRotate : MonoBehaviour
 {
+    //Holds wheel colider
     public WheelCollider wc;
+    //Reference to player controller
     Controls controllerTest;
+    //Float value for current torque speed
     public float torque = 200;
+    //Number torque should increase to until it is reached
     public int cruiseIncrease = 0;
+    //Flag used to determine whether the wheel should be able to turn (this will be moved to a tag in the future)
     public bool frontWheel = false;
+    //Raw vector pulled from left joystick
     public Vector2 steerVec;
+    //Max angle allowed for steering
     public float maxSteerAngle = 30;
+    //Used to judge how far to steer
     float steerMag = 0;
+    //Start gets the wheelCollider component
     void Start()
     {
         wc = this.GetComponent<WheelCollider>();
@@ -34,7 +47,8 @@ public class wheelRotate : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(wc.motorTorque);
-        Go(cruiseIncrease,steerVec.x);
+        //Set to auto accelerate currently
+        Go(1,steerVec.x);
         steerMag += steerVec.x;
 
         //Tester code for brakes, intend to implement "natural" deceleration in lieu of brakes
