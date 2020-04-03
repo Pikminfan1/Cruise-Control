@@ -689,10 +689,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2245414424382151374, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414424448866188, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414424448866189, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e2d40a3921c9ca54780157e76d3ba172,
+        type: 3}
+    - target: {fileID: 2245414424448866189, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: e2d40a3921c9ca54780157e76d3ba172, type: 3}
+    - target: {fileID: 2245414424448866189, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414424448866189, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414424448866189, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414424616742975, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2245414424820819254, guid: 12ed2c11743120744ae113c190a0646c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 347574210}
+    - target: {fileID: 2245414424846904992, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245414425503637467, guid: 12ed2c11743120744ae113c190a0646c,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12ed2c11743120744ae113c190a0646c, type: 3}

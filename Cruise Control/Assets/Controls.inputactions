@@ -221,6 +221,33 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "UI Controls",
+            "id": "cce0e99f-2535-4fd6-b594-3cf77bea1fb2",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "352264e5-b3b2-4dc5-b0ee-a9ef4bee83a4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ac81d299-55cc-4722-adaa-d6f27459ac4c",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

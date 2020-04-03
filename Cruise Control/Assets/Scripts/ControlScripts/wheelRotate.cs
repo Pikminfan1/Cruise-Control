@@ -12,6 +12,9 @@ public class wheelRotate : MonoBehaviour
     public WheelCollider wc;
     //Reference to player controller
     Controls controllerTest;
+    ////Float value of speed of the wheel
+    //public float speed = 0;
+    //private float targetSpeed = 0;
     //Float value for current torque speed
     public float torque = 200;
     //Number torque should increase to until it is reached
@@ -26,8 +29,8 @@ public class wheelRotate : MonoBehaviour
     float steerMag = 0;
     //Used to determine direction of acceleration
     public float accelerationDirection = 0;
-    //Start gets the wheelCollider component
 
+    //Start gets the wheelCollider component
     void Start()
     {
         wc = this.GetComponent<WheelCollider>();
@@ -49,6 +52,13 @@ public class wheelRotate : MonoBehaviour
     //Fixed Update will call
     void FixedUpdate()
     {
+        ////Update speed
+        //Speedometer();
+        //speed = Mathf.SmoothStep(speed, targetSpeed, 2 * Time.deltaTime); //Gradually increase/decrease speed
+        //speed = Mathf.Clamp(speed, 0, speed);
+        ////Displays speed of car for UI text SPEED (in PlayerPrefsText.cs)
+        //PlayerPrefs.SetFloat("Speed", speed);
+
         //Debug.Log(wc.motorTorque);
         //Set to auto accelerate currently
         Go(accelerationDirection,steerVec.x);
@@ -82,4 +92,13 @@ public class wheelRotate : MonoBehaviour
     {
         controllerTest.Disable();
     }
+
+    //public void Speedometer()
+    //{
+    //    float circ = 2.0f * 3.14f * wc.radius; //finds circumference of wheel
+    //    float wheelRpm = (circ * wc.rpm) / 1000; //rpm in km
+
+    //    float speedKmh = (circ * wheelRpm) * 60; //speed in kilometers per hour
+    //    targetSpeed = speedKmh * 0.62f; //speed in mph
+    //}
 }
