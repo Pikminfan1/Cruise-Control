@@ -234,6 +234,33 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""UI Controls"",
+            ""id"": ""cce0e99f-2535-4fd6-b594-3cf77bea1fb2"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""352264e5-b3b2-4dc5-b0ee-a9ef4bee83a4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ac81d299-55cc-4722-adaa-d6f27459ac4c"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -246,6 +273,9 @@ public class @Controls : IInputActionCollection, IDisposable
         m_BaseMovement_IncreaseCruise = m_BaseMovement.FindAction("IncreaseCruise", throwIfNotFound: true);
         m_BaseMovement_TurnOffCruise = m_BaseMovement.FindAction("TurnOffCruise", throwIfNotFound: true);
         m_BaseMovement_Steer = m_BaseMovement.FindAction("Steer", throwIfNotFound: true);
+        // UI Controls
+        m_UIControls = asset.FindActionMap("UI Controls", throwIfNotFound: true);
+        m_UIControls_Move = m_UIControls.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -364,6 +394,39 @@ public class @Controls : IInputActionCollection, IDisposable
         }
     }
     public BaseMovementActions @BaseMovement => new BaseMovementActions(this);
+
+    // UI Controls
+    private readonly InputActionMap m_UIControls;
+    private IUIControlsActions m_UIControlsActionsCallbackInterface;
+    private readonly InputAction m_UIControls_Move;
+    public struct UIControlsActions
+    {
+        private @Controls m_Wrapper;
+        public UIControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_UIControls_Move;
+        public InputActionMap Get() { return m_Wrapper.m_UIControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IUIControlsActions instance)
+        {
+            if (m_Wrapper.m_UIControlsActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_UIControlsActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_UIControlsActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_UIControlsActionsCallbackInterface.OnMove;
+            }
+            m_Wrapper.m_UIControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+            }
+        }
+    }
+    public UIControlsActions @UIControls => new UIControlsActions(this);
     public interface IBaseMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -372,5 +435,9 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnIncreaseCruise(InputAction.CallbackContext context);
         void OnTurnOffCruise(InputAction.CallbackContext context);
         void OnSteer(InputAction.CallbackContext context);
+    }
+    public interface IUIControlsActions
+    {
+        void OnMove(InputAction.CallbackContext context);
     }
 }

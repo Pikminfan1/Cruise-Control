@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
 
     Controls controllerTest;
     Vector2 lookRaw;
-    
-    
+
+    public float speed = 0;
 
     
     private void Awake()
@@ -53,5 +53,17 @@ public class PlayerController : MonoBehaviour
         return false;
     }
     
-    
+    void FixedUpdate()
+    {
+        float targetSpeed = PlayerRB.velocity.magnitude * 3.6f; //km/hr
+        //targetSpeed *= 0.62f; //mph
+
+        speed = Mathf.SmoothStep(speed, targetSpeed, 2 * Time.deltaTime); //Gradually increase/decrease speed display
+        speed = Mathf.Clamp(speed, 0, speed);
+        speed = Mathf.Ceil(speed);
+        //Displays speed of car for UI text SPEED (in PlayerPrefsText.cs)
+        PlayerPrefs.SetFloat("Speed", speed);
+
+        //Debug.Log(speed);
+    }
 }
