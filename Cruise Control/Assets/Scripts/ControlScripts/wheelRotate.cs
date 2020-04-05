@@ -49,7 +49,7 @@ public class wheelRotate : MonoBehaviour
             wc.steerAngle = steering;
         }
     }
-    //Fixed Update will call
+    //Fixed Update will call y
     void FixedUpdate()
     {
         ////Update speed
