@@ -14,10 +14,7 @@ public class GameManager : MonoSingleton<GameManager>
         //makes sure pause menu isn't on at the start
         UI.GetComponentInChildren<Canvas>().enabled = false;
     }
-    public void Update()
-    {
-        Debug.Log("Right Trigger val: " + ButtonActionManager.RightTriggerValue);
-    }
+
 
     //// Update is called once per frame
     //void Update()

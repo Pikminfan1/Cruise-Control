@@ -113,6 +113,78 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dpad"",
+                    ""type"": ""Button"",
+                    ""id"": ""c296ab34-0146-4c22-beef-9564e5834dd8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Stick Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""a290697a-9d30-45e9-a3dd-2c5160df189a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left Stick Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d2484a3-cfe1-46c3-a4d7-cfd754108257"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftStickDirection"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7627e67-02e0-46f4-b461-b3a2df8e5778"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Select Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""1cefa743-2c60-4d03-af9f-421871cae47f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Start Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""181b7d07-b22e-447d-80b7-a5802b411736"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Stick Direction"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d49a54c-dfe3-478d-8443-79313b016b02"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Bumper"",
+                    ""type"": ""Button"",
+                    ""id"": ""952678cb-eaa4-4114-9729-b44741f4fbbd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left Bumper"",
+                    ""type"": ""Button"",
+                    ""id"": ""e5d6df80-bb76-4f6b-8d76-fb07073cb2c6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -346,6 +418,105 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""South Face Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8649a716-a01d-41f0-be43-1052f230e307"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": """",
+                    ""action"": ""Dpad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1206d179-3681-4522-92b3-867c36e0908a"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Stick Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80ec18bf-f613-499a-b292-abcdfb64e209"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Stick Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae61e130-d748-4066-bfd3-e21a44e9d4ca"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftStickDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e15b7014-88b9-4a2b-98e2-ef77572f297a"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e941da1-706f-4e89-baad-c0646d07bb9a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""257e3083-7dbd-486d-8220-90ca874a31fa"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Stick Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84b7648d-bcb8-4bdc-8ad8-c388bbd85847"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Bumper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""029dcfc2-a561-4d99-a131-77ef9761664d"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Bumper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -393,11 +564,18 @@ public class @Controls : IInputActionCollection, IDisposable
         m_BaseMovement_WestFaceButton = m_BaseMovement.FindAction("West Face Button", throwIfNotFound: true);
         m_BaseMovement_NorthFaceButton = m_BaseMovement.FindAction("North Face Button", throwIfNotFound: true);
         m_BaseMovement_SouthFaceButton = m_BaseMovement.FindAction("South Face Button", throwIfNotFound: true);
-
+        m_BaseMovement_Dpad = m_BaseMovement.FindAction("Dpad", throwIfNotFound: true);
+        m_BaseMovement_RightStickButton = m_BaseMovement.FindAction("Right Stick Button", throwIfNotFound: true);
+        m_BaseMovement_LeftStickButton = m_BaseMovement.FindAction("Left Stick Button", throwIfNotFound: true);
+        m_BaseMovement_LeftStickDirection = m_BaseMovement.FindAction("LeftStickDirection", throwIfNotFound: true);
+        m_BaseMovement_SelectButton = m_BaseMovement.FindAction("Select Button", throwIfNotFound: true);
+        m_BaseMovement_StartButton = m_BaseMovement.FindAction("Start Button", throwIfNotFound: true);
+        m_BaseMovement_RightStickDirection = m_BaseMovement.FindAction("Right Stick Direction", throwIfNotFound: true);
+        m_BaseMovement_RightBumper = m_BaseMovement.FindAction("Right Bumper", throwIfNotFound: true);
+        m_BaseMovement_LeftBumper = m_BaseMovement.FindAction("Left Bumper", throwIfNotFound: true);
         // UI Controls
         m_UIControls = asset.FindActionMap("UI Controls", throwIfNotFound: true);
         m_UIControls_Move = m_UIControls.FindAction("Move", throwIfNotFound: true);
-
     }
 
     public void Dispose()
@@ -459,6 +637,15 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_BaseMovement_WestFaceButton;
     private readonly InputAction m_BaseMovement_NorthFaceButton;
     private readonly InputAction m_BaseMovement_SouthFaceButton;
+    private readonly InputAction m_BaseMovement_Dpad;
+    private readonly InputAction m_BaseMovement_RightStickButton;
+    private readonly InputAction m_BaseMovement_LeftStickButton;
+    private readonly InputAction m_BaseMovement_LeftStickDirection;
+    private readonly InputAction m_BaseMovement_SelectButton;
+    private readonly InputAction m_BaseMovement_StartButton;
+    private readonly InputAction m_BaseMovement_RightStickDirection;
+    private readonly InputAction m_BaseMovement_RightBumper;
+    private readonly InputAction m_BaseMovement_LeftBumper;
     public struct BaseMovementActions
     {
         private @Controls m_Wrapper;
@@ -475,6 +662,15 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @WestFaceButton => m_Wrapper.m_BaseMovement_WestFaceButton;
         public InputAction @NorthFaceButton => m_Wrapper.m_BaseMovement_NorthFaceButton;
         public InputAction @SouthFaceButton => m_Wrapper.m_BaseMovement_SouthFaceButton;
+        public InputAction @Dpad => m_Wrapper.m_BaseMovement_Dpad;
+        public InputAction @RightStickButton => m_Wrapper.m_BaseMovement_RightStickButton;
+        public InputAction @LeftStickButton => m_Wrapper.m_BaseMovement_LeftStickButton;
+        public InputAction @LeftStickDirection => m_Wrapper.m_BaseMovement_LeftStickDirection;
+        public InputAction @SelectButton => m_Wrapper.m_BaseMovement_SelectButton;
+        public InputAction @StartButton => m_Wrapper.m_BaseMovement_StartButton;
+        public InputAction @RightStickDirection => m_Wrapper.m_BaseMovement_RightStickDirection;
+        public InputAction @RightBumper => m_Wrapper.m_BaseMovement_RightBumper;
+        public InputAction @LeftBumper => m_Wrapper.m_BaseMovement_LeftBumper;
         public InputActionMap Get() { return m_Wrapper.m_BaseMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -520,6 +716,33 @@ public class @Controls : IInputActionCollection, IDisposable
                 @SouthFaceButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
                 @SouthFaceButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
                 @SouthFaceButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
+                @Dpad.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnDpad;
+                @Dpad.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnDpad;
+                @Dpad.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnDpad;
+                @RightStickButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickButton;
+                @RightStickButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickButton;
+                @RightStickButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickButton;
+                @LeftStickButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickButton;
+                @LeftStickButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickButton;
+                @LeftStickButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickButton;
+                @LeftStickDirection.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickDirection;
+                @LeftStickDirection.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickDirection;
+                @LeftStickDirection.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftStickDirection;
+                @SelectButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSelectButton;
+                @SelectButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSelectButton;
+                @SelectButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSelectButton;
+                @StartButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnStartButton;
+                @StartButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnStartButton;
+                @StartButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnStartButton;
+                @RightStickDirection.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickDirection;
+                @RightStickDirection.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickDirection;
+                @RightStickDirection.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightStickDirection;
+                @RightBumper.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightBumper;
+                @RightBumper.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightBumper;
+                @RightBumper.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightBumper;
+                @LeftBumper.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftBumper;
+                @LeftBumper.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftBumper;
+                @LeftBumper.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftBumper;
             }
             m_Wrapper.m_BaseMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -560,6 +783,33 @@ public class @Controls : IInputActionCollection, IDisposable
                 @SouthFaceButton.started += instance.OnSouthFaceButton;
                 @SouthFaceButton.performed += instance.OnSouthFaceButton;
                 @SouthFaceButton.canceled += instance.OnSouthFaceButton;
+                @Dpad.started += instance.OnDpad;
+                @Dpad.performed += instance.OnDpad;
+                @Dpad.canceled += instance.OnDpad;
+                @RightStickButton.started += instance.OnRightStickButton;
+                @RightStickButton.performed += instance.OnRightStickButton;
+                @RightStickButton.canceled += instance.OnRightStickButton;
+                @LeftStickButton.started += instance.OnLeftStickButton;
+                @LeftStickButton.performed += instance.OnLeftStickButton;
+                @LeftStickButton.canceled += instance.OnLeftStickButton;
+                @LeftStickDirection.started += instance.OnLeftStickDirection;
+                @LeftStickDirection.performed += instance.OnLeftStickDirection;
+                @LeftStickDirection.canceled += instance.OnLeftStickDirection;
+                @SelectButton.started += instance.OnSelectButton;
+                @SelectButton.performed += instance.OnSelectButton;
+                @SelectButton.canceled += instance.OnSelectButton;
+                @StartButton.started += instance.OnStartButton;
+                @StartButton.performed += instance.OnStartButton;
+                @StartButton.canceled += instance.OnStartButton;
+                @RightStickDirection.started += instance.OnRightStickDirection;
+                @RightStickDirection.performed += instance.OnRightStickDirection;
+                @RightStickDirection.canceled += instance.OnRightStickDirection;
+                @RightBumper.started += instance.OnRightBumper;
+                @RightBumper.performed += instance.OnRightBumper;
+                @RightBumper.canceled += instance.OnRightBumper;
+                @LeftBumper.started += instance.OnLeftBumper;
+                @LeftBumper.performed += instance.OnLeftBumper;
+                @LeftBumper.canceled += instance.OnLeftBumper;
             }
         }
     }
@@ -611,6 +861,15 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnWestFaceButton(InputAction.CallbackContext context);
         void OnNorthFaceButton(InputAction.CallbackContext context);
         void OnSouthFaceButton(InputAction.CallbackContext context);
+        void OnDpad(InputAction.CallbackContext context);
+        void OnRightStickButton(InputAction.CallbackContext context);
+        void OnLeftStickButton(InputAction.CallbackContext context);
+        void OnLeftStickDirection(InputAction.CallbackContext context);
+        void OnSelectButton(InputAction.CallbackContext context);
+        void OnStartButton(InputAction.CallbackContext context);
+        void OnRightStickDirection(InputAction.CallbackContext context);
+        void OnRightBumper(InputAction.CallbackContext context);
+        void OnLeftBumper(InputAction.CallbackContext context);
     }
     public interface IUIControlsActions
     {
