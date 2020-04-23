@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+
+public class GameManager : MonoSingleton<GameManager>
 {
+
     public UIManager UI;
 
     // Start is called before the first frame update
