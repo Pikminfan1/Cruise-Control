@@ -65,6 +65,54 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Trigger"",
+                    ""type"": ""Button"",
+                    ""id"": ""4065f274-d259-4aa1-9750-96d53e4d6670"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left Trigger"",
+                    ""type"": ""Button"",
+                    ""id"": ""316fa259-3292-4964-97e7-43321e02adf3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""East Face Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""5148f7ea-e049-4ad0-9786-f45526c6ce91"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""West Face Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""55d3a429-4874-4fb2-bb7c-745d17bb3ecc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""North Face Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cb8429a-4325-4ea7-bec8-2f6cd1ef4147"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""South Face Button"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cdd751b-8ec2-4c07-b0c7-0f8d3970fef8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -232,6 +280,72 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Steer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6ebbf94-e388-48f9-b3ad-d28d3d6fc2a5"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Trigger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6e3affd-90ad-437b-acc8-c52a0f8c56b8"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Trigger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e1bbfe0-60c8-486d-8ba2-3db07ba182f2"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""East Face Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb6f5ed6-4d56-41e1-84ce-09eb19b17cab"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""West Face Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""277b1098-f883-4941-afcb-0994a0800bbf"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""North Face Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05e9a7ff-4648-467a-9dab-05333a395729"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""South Face Button"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -246,6 +360,12 @@ public class @Controls : IInputActionCollection, IDisposable
         m_BaseMovement_IncreaseCruise = m_BaseMovement.FindAction("IncreaseCruise", throwIfNotFound: true);
         m_BaseMovement_TurnOffCruise = m_BaseMovement.FindAction("TurnOffCruise", throwIfNotFound: true);
         m_BaseMovement_Steer = m_BaseMovement.FindAction("Steer", throwIfNotFound: true);
+        m_BaseMovement_RightTrigger = m_BaseMovement.FindAction("Right Trigger", throwIfNotFound: true);
+        m_BaseMovement_LeftTrigger = m_BaseMovement.FindAction("Left Trigger", throwIfNotFound: true);
+        m_BaseMovement_EastFaceButton = m_BaseMovement.FindAction("East Face Button", throwIfNotFound: true);
+        m_BaseMovement_WestFaceButton = m_BaseMovement.FindAction("West Face Button", throwIfNotFound: true);
+        m_BaseMovement_NorthFaceButton = m_BaseMovement.FindAction("North Face Button", throwIfNotFound: true);
+        m_BaseMovement_SouthFaceButton = m_BaseMovement.FindAction("South Face Button", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +421,12 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_BaseMovement_IncreaseCruise;
     private readonly InputAction m_BaseMovement_TurnOffCruise;
     private readonly InputAction m_BaseMovement_Steer;
+    private readonly InputAction m_BaseMovement_RightTrigger;
+    private readonly InputAction m_BaseMovement_LeftTrigger;
+    private readonly InputAction m_BaseMovement_EastFaceButton;
+    private readonly InputAction m_BaseMovement_WestFaceButton;
+    private readonly InputAction m_BaseMovement_NorthFaceButton;
+    private readonly InputAction m_BaseMovement_SouthFaceButton;
     public struct BaseMovementActions
     {
         private @Controls m_Wrapper;
@@ -311,6 +437,12 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @IncreaseCruise => m_Wrapper.m_BaseMovement_IncreaseCruise;
         public InputAction @TurnOffCruise => m_Wrapper.m_BaseMovement_TurnOffCruise;
         public InputAction @Steer => m_Wrapper.m_BaseMovement_Steer;
+        public InputAction @RightTrigger => m_Wrapper.m_BaseMovement_RightTrigger;
+        public InputAction @LeftTrigger => m_Wrapper.m_BaseMovement_LeftTrigger;
+        public InputAction @EastFaceButton => m_Wrapper.m_BaseMovement_EastFaceButton;
+        public InputAction @WestFaceButton => m_Wrapper.m_BaseMovement_WestFaceButton;
+        public InputAction @NorthFaceButton => m_Wrapper.m_BaseMovement_NorthFaceButton;
+        public InputAction @SouthFaceButton => m_Wrapper.m_BaseMovement_SouthFaceButton;
         public InputActionMap Get() { return m_Wrapper.m_BaseMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -338,6 +470,24 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Steer.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSteer;
                 @Steer.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSteer;
                 @Steer.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSteer;
+                @RightTrigger.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightTrigger;
+                @RightTrigger.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightTrigger;
+                @RightTrigger.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnRightTrigger;
+                @LeftTrigger.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftTrigger;
+                @LeftTrigger.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftTrigger;
+                @LeftTrigger.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnLeftTrigger;
+                @EastFaceButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnEastFaceButton;
+                @EastFaceButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnEastFaceButton;
+                @EastFaceButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnEastFaceButton;
+                @WestFaceButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnWestFaceButton;
+                @WestFaceButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnWestFaceButton;
+                @WestFaceButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnWestFaceButton;
+                @NorthFaceButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnNorthFaceButton;
+                @NorthFaceButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnNorthFaceButton;
+                @NorthFaceButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnNorthFaceButton;
+                @SouthFaceButton.started -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
+                @SouthFaceButton.performed -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
+                @SouthFaceButton.canceled -= m_Wrapper.m_BaseMovementActionsCallbackInterface.OnSouthFaceButton;
             }
             m_Wrapper.m_BaseMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +510,24 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Steer.started += instance.OnSteer;
                 @Steer.performed += instance.OnSteer;
                 @Steer.canceled += instance.OnSteer;
+                @RightTrigger.started += instance.OnRightTrigger;
+                @RightTrigger.performed += instance.OnRightTrigger;
+                @RightTrigger.canceled += instance.OnRightTrigger;
+                @LeftTrigger.started += instance.OnLeftTrigger;
+                @LeftTrigger.performed += instance.OnLeftTrigger;
+                @LeftTrigger.canceled += instance.OnLeftTrigger;
+                @EastFaceButton.started += instance.OnEastFaceButton;
+                @EastFaceButton.performed += instance.OnEastFaceButton;
+                @EastFaceButton.canceled += instance.OnEastFaceButton;
+                @WestFaceButton.started += instance.OnWestFaceButton;
+                @WestFaceButton.performed += instance.OnWestFaceButton;
+                @WestFaceButton.canceled += instance.OnWestFaceButton;
+                @NorthFaceButton.started += instance.OnNorthFaceButton;
+                @NorthFaceButton.performed += instance.OnNorthFaceButton;
+                @NorthFaceButton.canceled += instance.OnNorthFaceButton;
+                @SouthFaceButton.started += instance.OnSouthFaceButton;
+                @SouthFaceButton.performed += instance.OnSouthFaceButton;
+                @SouthFaceButton.canceled += instance.OnSouthFaceButton;
             }
         }
     }
@@ -372,5 +540,11 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnIncreaseCruise(InputAction.CallbackContext context);
         void OnTurnOffCruise(InputAction.CallbackContext context);
         void OnSteer(InputAction.CallbackContext context);
+        void OnRightTrigger(InputAction.CallbackContext context);
+        void OnLeftTrigger(InputAction.CallbackContext context);
+        void OnEastFaceButton(InputAction.CallbackContext context);
+        void OnWestFaceButton(InputAction.CallbackContext context);
+        void OnNorthFaceButton(InputAction.CallbackContext context);
+        void OnSouthFaceButton(InputAction.CallbackContext context);
     }
 }

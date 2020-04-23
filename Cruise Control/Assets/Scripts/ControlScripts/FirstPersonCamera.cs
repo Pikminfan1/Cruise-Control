@@ -6,7 +6,13 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-
+    public void Update()
+    {
+        Debug.Log("East Face Button: " + ButtonActionManager.EastFaceButtonIsDown);
+        Debug.Log("West Face Button: " + ButtonActionManager.WestFaceButtonIsDown);
+        Debug.Log("North Face Button: " + ButtonActionManager.NorthFaceButtonIsDown);
+        Debug.Log("South Face Button: " + ButtonActionManager.SouthFaceButtonIsDown);
+    }
     //Values for Camera Sensitivity for x and Y axis
     public float sensitivityX = 5f;
     public float sensitivityY = 5f;

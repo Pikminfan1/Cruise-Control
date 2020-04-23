@@ -52,6 +52,54 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Right Trigger",
+                    "type": "Button",
+                    "id": "4065f274-d259-4aa1-9750-96d53e4d6670",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Left Trigger",
+                    "type": "Button",
+                    "id": "316fa259-3292-4964-97e7-43321e02adf3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "East Face Button",
+                    "type": "Button",
+                    "id": "5148f7ea-e049-4ad0-9786-f45526c6ce91",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "West Face Button",
+                    "type": "Button",
+                    "id": "55d3a429-4874-4fb2-bb7c-745d17bb3ecc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "North Face Button",
+                    "type": "Button",
+                    "id": "5cb8429a-4325-4ea7-bec8-2f6cd1ef4147",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "South Face Button",
+                    "type": "Button",
+                    "id": "5cdd751b-8ec2-4c07-b0c7-0f8d3970fef8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -219,6 +267,72 @@
                     "action": "Steer",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e6ebbf94-e388-48f9-b3ad-d28d3d6fc2a5",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6e3affd-90ad-437b-acc8-c52a0f8c56b8",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e1bbfe0-60c8-486d-8ba2-3db07ba182f2",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "East Face Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb6f5ed6-4d56-41e1-84ce-09eb19b17cab",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "West Face Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "277b1098-f883-4941-afcb-0994a0800bbf",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "North Face Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05e9a7ff-4648-467a-9dab-05333a395729",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "South Face Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
