@@ -15,6 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
         UI.GetComponentInChildren<Canvas>().enabled = false;
     }
 
+
     //// Update is called once per frame
     //void Update()
     //{
