@@ -183,7 +183,7 @@ public class ButtonActionManager : MonoSingleton<ButtonActionManager> {
     private static Vector2 _leftStickDirection;
     /// <summary>
     /// Return a Vector2 of the Current direction of the left joystick. X Component is the horizontal and the Y component is the vertical.
-    /// </summary>
+    /// </summary>//
     public static Vector2 LeftStickDirection
     {
         get
