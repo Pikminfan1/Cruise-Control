@@ -9,28 +9,14 @@ public class PlayerController : MonoBehaviour
     //public PlayerStats stats;
     //Controls controllerTest;
 
-    Controls controllerTest;
+    
     Vector2 lookRaw;
 
     public float speed = 0;
 
     
-    private void Awake()
-    {
-        PlayerRB = GetComponent<Rigidbody>();
-        //stats.test = true;
 
-        controllerTest = new Controls();
-        controllerTest.BaseMovement.Move.performed += ctx => lookRaw = ctx.ReadValue<Vector2>();
-    }
-    private void OnEnable()
-    {
-        controllerTest.Enable();
-    }
-    private void OnDisable()
-    {
-        controllerTest.Disable();
-    }
+
 
     //Method purpose is to determine if the player is rotating the joystick and in which direction in order to roll the window up or down
     bool isCounterClockwise(Vector2 prevPos, Vector2 currPos)
@@ -56,8 +42,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float targetSpeed = PlayerRB.velocity.magnitude * 3.6f; //km/hr
-        //targetSpeed *= 0.62f; //mph
-
+        targetSpeed *= 0.62f; //mph
+        Debug.Log("Velocity mag" + PlayerRB.velocity.magnitude);
         speed = Mathf.SmoothStep(speed, targetSpeed, 2 * Time.deltaTime); //Gradually increase/decrease speed display
         speed = Mathf.Clamp(speed, 0, speed);
         speed = Mathf.Ceil(speed);

@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerPrefsText : MonoBehaviour
 {
-    public string name;
+    
+    public int speed;
 
     // Update is called once per frame
     void Update()
+
     {
-        GetComponent<UnityEngine.UI.Text>().text = PlayerPrefs.GetFloat(name) + "";
+        speed = (int)CarController.CurrentSpeed;
+        GetComponent<UnityEngine.UI.Text>().text = speed + "";
     }
 }
