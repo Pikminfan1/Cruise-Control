@@ -56,6 +56,7 @@ public class InteractWithObject : MonoBehaviour
                     }
                     if (currentInteraction.CanUse && ButtonActionManager.NorthFaceButtonIsDown)
                     {
+                        Debug.Log("Tried to use");
                         currentInteraction.Use();
                     }
                 }
