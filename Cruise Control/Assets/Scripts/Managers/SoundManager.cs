@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip carEngine;
     public void carEngineSound()
     {
+        soundFX.playOnAwake = true;
         soundFX.loop = true;
         soundFX.clip = carEngine;
         soundFX.volume = 0.06f;

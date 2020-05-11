@@ -8,7 +8,7 @@ public class Soundtrack : MonoBehaviour
     public AudioClip[] soundtrack2; //For when stress is over 50%
     public bool isOver = false; //stress is over 50%
 
-    public PlayerStats player;
+    //public PlayerStats player;
 
     float fadeRate = 0.5f;
 
@@ -48,18 +48,23 @@ public class Soundtrack : MonoBehaviour
     void stressCheck()
     {
         //if stress has just surpassed 50, crossfade audio 
-        //if(isOver == false && PlayerStats.stress > 50){
-        //  isOver = true;
-         // crossfadeOver();
-        //}
-        //else{
-        //  isOver = false;
-        //}
+        if(isOver == false && GameManager.stress > 50){
+          isOver = true;
+          crossfadeOver();
+        }
+        else if(isOver == true && GameManager.stress < 50)
+        {
+            //crossfadeUnder();
+        }
+        else{
+          isOver = false;
+        }
     }
 
-    //crossfade to fast-paced song
+    //crossfade to faster-paced song
     void crossfadeOver()
     {
+        //lower current track volume to 0
         while(GetComponent<AudioSource>().volume > 0.1f)
         {
             GetComponent<AudioSource>().volume = Mathf.Lerp(GetComponent<AudioSource>().volume, 0.0f,fadeRate*Time.deltaTime);
@@ -67,13 +72,15 @@ public class Soundtrack : MonoBehaviour
 
         GetComponent<AudioSource>().volume = 0.0f;
 
+        ///play new track from soundtrack 2 and increase volume to 1
+        GetComponent<AudioSource>().clip = soundtrack2[Random.Range(0, soundtrack2.Length)];
+        GetComponent<AudioSource>().Play();
+
         while (GetComponent<AudioSource>().volume < 0.9f)
         {
             GetComponent<AudioSource>().volume = Mathf.Lerp(GetComponent<AudioSource>().volume, 1.0f, fadeRate * Time.deltaTime);
         }
 
         GetComponent<AudioSource>().volume = 1.0f;
-
-
     }
 }
