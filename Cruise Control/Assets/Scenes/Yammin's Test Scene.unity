@@ -540,14 +540,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundtrack:
-  - {fileID: 8300000, guid: 3230fb0db1f4264419eeb0e2f5edad78, type: 3}
-  - {fileID: 8300000, guid: 67e40c4ddb0104b409e9a9f18a31f58d, type: 3}
-  - {fileID: 8300000, guid: e6da7115506b3a94cb384ac9ce03a092, type: 3}
-  - {fileID: 8300000, guid: 154388f95b2f8e849965d2855d7eec37, type: 3}
+  - {fileID: 8300000, guid: 3c5a309d1b78ffe4883b6bc88fc93fd5, type: 3}
   - {fileID: 8300000, guid: 612688683c5d4d7478dd95fab46414d6, type: 3}
   - {fileID: 8300000, guid: dbdb79cc875e6c744a338202e7a2e2c0, type: 3}
-  - {fileID: 8300000, guid: d532437dc8270da4ebb0c327505166e3, type: 3}
-  - {fileID: 8300000, guid: f0bce9ab196c1c449b0d2c15806b6453, type: 3}
+  soundtrack2:
+  - {fileID: 8300000, guid: 3230fb0db1f4264419eeb0e2f5edad78, type: 3}
+  - {fileID: 8300000, guid: 67e40c4ddb0104b409e9a9f18a31f58d, type: 3}
+  - {fileID: 8300000, guid: 154388f95b2f8e849965d2855d7eec37, type: 3}
+  - {fileID: 8300000, guid: e6da7115506b3a94cb384ac9ce03a092, type: 3}
+  isOver: 0
 --- !u!4 &1132463102
 Transform:
   m_ObjectHideFlags: 0
