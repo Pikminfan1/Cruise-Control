@@ -7,6 +7,8 @@ public class PlayerPrefsText : MonoBehaviour
 {
     
     public int speed;
+    public float thirst;
+    public float hunger;
 
     // Update is called once per frame
     void Update()

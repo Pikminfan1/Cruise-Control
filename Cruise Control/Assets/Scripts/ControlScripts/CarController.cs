@@ -150,7 +150,7 @@ public class CarController : MonoSingleton<CarController>
             var hbTorque = handbrake * m_MaxHandbrakeTorque;
             m_WheelColliders[2].brakeTorque = hbTorque;
             m_WheelColliders[3].brakeTorque = hbTorque;
-            Debug.Log("after"+m_WheelColliders[3].brakeTorque);
+            //Debug.Log("after"+m_WheelColliders[3].brakeTorque);
         }
         else
         {

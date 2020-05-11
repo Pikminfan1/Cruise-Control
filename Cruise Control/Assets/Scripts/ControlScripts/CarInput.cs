@@ -17,7 +17,10 @@ public class CarInput : MonoBehaviour
         // pass the input to the car!
         float h = ButtonActionManager.LeftStickDirection.x;
         float v = ButtonActionManager.RightTriggerValue;
-        
+        if (ButtonActionManager.RightBumperIsDown)
+        {
+            v *= -1;
+        }
         float handbrake = ButtonActionManager.LeftTriggerValue;
         m_Car.Move(h, v, v, handbrake);
 
