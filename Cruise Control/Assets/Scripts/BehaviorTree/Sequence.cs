@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sequence : TaskNode
+public class Sequence : Node
 {
-    //child nodes for the sequence
-    protected List<TaskNode> m_nodes = new List<TaskNode>();
+    //child nodes for this sequence
+    protected List<Node> m_nodes = new List<Node>();
 
     //Passing in a list of child nodes
-    public Sequence(List<TaskNode> nodes)
+    public Sequence(List<Node> nodes)
     {
         m_nodes = nodes;
     }
@@ -19,7 +19,7 @@ public class Sequence : TaskNode
     {
         bool anyChildRunning = false;
 
-        foreach (TaskNode node in m_nodes)
+        foreach (Node node in m_nodes)
         {
             switch (node.Evaluate())
             {
@@ -36,7 +36,10 @@ public class Sequence : TaskNode
                     return m_nodeState;
             }
         }
+        //if anyChildRunning is true, node state is running.
+        //Otherwise, node state is success.
         m_nodeState = anyChildRunning ? NodeStates.RUNNING : NodeStates.SUCCESS;
+
         return m_nodeState;
     }
 }

@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Selector : TaskNode
+public class Selector : Node
 {
-    //child nodes for the selector
-    protected List<TaskNode> m_nodes = new List<TaskNode>();
+    //child nodes for this selector
+    protected List<Node> m_nodes = new List<Node>();
 
     //Passing in a list of child nodes
-    public Selector(List<TaskNode> nodes)
+    public Selector(List<Node> nodes)
     {
         m_nodes = nodes;
     }
 
-    //If any child node is a success, then success is immediately reported.
+    //If any child node is a success, the selector immediately reports a success.
     //Otherwise, if all the child nodes fail, failure is reported.
     public override NodeStates Evaluate()
     {
-        foreach(TaskNode node in m_nodes)
+        foreach(Node node in m_nodes)
         {
             switch (node.Evaluate())
             {
@@ -34,6 +34,7 @@ public class Selector : TaskNode
             }
         }
         m_nodeState = NodeStates.FAILURE;
+
         return m_nodeState;
     }
 }
