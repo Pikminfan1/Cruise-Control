@@ -13,27 +13,20 @@ public class Spedometer : MonoBehaviour
     private float speedMax;
     private float speed;
 
-    private GameObject carRB;
-    private PlayerController pc;
+
 
     private void Awake()
     {
-        carRB = GameObject.Find("carBody");
-        pc = carRB.GetComponent<PlayerController>();
+
         speed = 0; //start speed
-        speedMax = 200f;
+        speedMax = 290f;
     }
 
     private void Update()
     {
-        ////for testing
-        //HandlePlayerInput();
-
-        //speed += 30f * Time.deltaTime;
-        //if (speed > speedMax) speed = speedMax;
 
         //Speed of the car
-        speed = pc.speed;
+        speed = CarController.CurrentSpeed;
         speed = Mathf.Clamp(speed, 0f, speedMax);
 
         //rotates needle based on calculated speed
