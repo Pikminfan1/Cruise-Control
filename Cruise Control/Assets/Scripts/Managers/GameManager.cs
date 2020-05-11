@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+
+public class GameManager : MonoSingleton<GameManager>
 {
+
     public UIManager UI;
 
     // Start is called before the first frame update
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
         //makes sure pause menu isn't on at the start
         UI.GetComponentInChildren<Canvas>().enabled = false;
     }
+
 
     //// Update is called once per frame
     //void Update()
