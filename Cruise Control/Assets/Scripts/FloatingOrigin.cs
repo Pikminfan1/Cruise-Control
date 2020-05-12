@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Camera))]
 public class FloatingOrigin : MonoBehaviour
 {
-    public float threshold = 100.0f;
+    public float threshold = 20.0f;
     public LevelLayoutGenerator layoutGenerator;
 
     void LateUpdate()
@@ -34,7 +34,7 @@ public class FloatingOrigin : MonoBehaviour
 
             Vector3 originDelta = Vector3.zero - cameraPosition;
             layoutGenerator.UpdateSpawnOrigin(originDelta);
-            Debug.Log("recentering, origin delta = " + originDelta);
+            Debug.Log("Recentering, origin delta = " + originDelta);
         }
 
     }
