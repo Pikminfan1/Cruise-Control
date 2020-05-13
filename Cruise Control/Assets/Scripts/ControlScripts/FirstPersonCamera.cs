@@ -33,15 +33,16 @@ public class FirstPersonCamera : MonoBehaviour
     //Holds reference to parent object so x rotation doesnt affect the y rotation
     Transform parentTrans;
     //Used for new input manager
-    Controls controllerTest;
+    //Controls controllerTest;
     public void FixedUpdate()
     {
+        
         //This used the Legacy input system
         //var md = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        var md = lookRaw;
 
+        var md = ButtonActionManager.RightStickDirection;
         //If the right stick is not pushed in,
-        if (!rStickButton)
+        if (!ButtonActionManager.RightStickIsDown)
         {
             //Retrieve the raw vector and scale it using our smooths and sensitivity values
             md = Vector2.Scale(md, new Vector2(sensitivityX * smoothing, sensitivityY * smoothing));
@@ -59,28 +60,12 @@ public class FirstPersonCamera : MonoBehaviour
         }
 
     }
-
-
-    //Awake is used to setup callbacks for Input and grab the parent object
     private void Awake()
     {
-        controllerTest = new Controls();
-        controllerTest.BaseMovement.Move.performed += ctx => lookRaw = ctx.ReadValue<Vector2>();
-        controllerTest.BaseMovement.ToggleWindow.performed += ctx => stats.isWindowRollToggle = true;
-        controllerTest.BaseMovement.ToggleWindow.canceled += ctx => stats.isWindowRollToggle = false;
-
         parentTrans = this.transform.parent;
     }
 
-    //Enable/Disable used to turn on/off Player input
-    private void OnEnable()
-    {
-        controllerTest.Enable();
-    }
-    private void OnDisable()
-    {
-        controllerTest.Disable();
-    }
+
 
     //This method takes a given angle and ensures it falls between -360 and 360
     //And between the given min and max values
