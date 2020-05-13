@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e35549fe6af6448890ab8dcc87d084, type: 3}
   m_Name: EastToWest
   m_EditorClassIdentifier: 
-  chunkSize: {x: 20, y: 20}
+  chunkSize: {x: 90, y: 90}
   levelChunks:
   - {fileID: 2253174678811318769, guid: d06b355385c76c540ac16f8eae871167, type: 3}
   entryDirection: 1
