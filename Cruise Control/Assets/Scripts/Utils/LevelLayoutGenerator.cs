@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -44,7 +43,7 @@ public class LevelLayoutGenerator : MonoBehaviour
     {
         previousChunk = firstChunk;
 
-        for(int i = 0; i < chunksToSpawn; i++)
+        for (int i = 0; i < chunksToSpawn; i++)
         {
             PickAndSpawnChunk();
 
@@ -79,21 +78,21 @@ public class LevelLayoutGenerator : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("Next: "+nextRequiredDirection);
+        //Debug.Log("Next: " + nextRequiredDirection);
 
-        for(int i = 0; i < levelChunkData.Length; i++)
+        for (int i = 0; i < levelChunkData.Length; i++)
         {
             if (levelChunkData[i].entryDirection == nextRequiredDirection)
             {
-                Debug.Log("True - " + i);
+                //Debug.Log("True - " + i);
                 allowedChunkList.Add(levelChunkData[i]);
             }
-            else Debug.Log("False");
-            
+            else;//Debug.Log("False");
+
         }
 
         nextChunk = allowedChunkList[Random.Range(0, allowedChunkList.Count)];
-       // Debug.Log(nextChunk);
+        // Debug.Log(nextChunk);
         return nextChunk;
     }
 
@@ -146,7 +145,7 @@ public class LevelLayoutGenerator : MonoBehaviour
     {
         TileTag tag = go.GetComponent<TileTag>();
         int index = 0;
-        foreach(PoolEntry e in pool)
+        foreach (PoolEntry e in pool)
         {
             if (e == tag) return index;
             index++;
@@ -163,7 +162,7 @@ public class LevelLayoutGenerator : MonoBehaviour
         public GameObject go;
         public TileTag tag;
 
-        public static bool operator==(PoolEntry e, TileTag t)
+        public static bool operator ==(PoolEntry e, TileTag t)
         {
             if (e.tag == t) return true;
             return false;
@@ -175,13 +174,13 @@ public class LevelLayoutGenerator : MonoBehaviour
             if (e.tag == t) return true;
             return false;
         }
-        public static bool operator !=(TileTag t, PoolEntry e) { return !(t == e);  }
+        public static bool operator !=(TileTag t, PoolEntry e) { return !(t == e); }
 
         public static bool operator ==(PoolEntry e, PoolEntry e2)
         {
             if (e.tag == e2.tag) return true;
             return false;
         }
-        public static bool operator !=(PoolEntry e, PoolEntry e2) { return !(e == e2);  }
+        public static bool operator !=(PoolEntry e, PoolEntry e2) { return !(e == e2); }
     };
 }
