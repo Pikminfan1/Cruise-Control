@@ -29,7 +29,7 @@ public class GameManager : MonoSingleton<GameManager>
     void Update()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-        Debug.Log(stressGrowthRate);
+        //Debug.Log(stressGrowthRate);
         if (stressGrowthRate > 0)
         {
             if (stress < maxStress)
