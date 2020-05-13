@@ -12,7 +12,7 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     //Float to represent current stress level
-    public float stress = 100;
+    public static float stress = 100;
     //Float to represent current speed
     public float currentSpeed;
     //Float to represent the "cruise" speed the car is attempting to reach
