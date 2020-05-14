@@ -31,7 +31,7 @@ public class ChildCryingMinigame : MiniGame
         IsPlaying = true;
         IsComplete = false;
         GameManager.stressGrowthRate += StressDelta;
-        Debug.Log(GameManager.stressGrowthRate);
+        //Debug.Log(GameManager.stressGrowthRate);
     }
 
     //Check if the child is crying and end the minigame if they are done
