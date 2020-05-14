@@ -1,5 +1,120 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+=======
+--- !u!1 &428355925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428355926}
+  - component: {fileID: 428355928}
+  - component: {fileID: 428355927}
+  - component: {fileID: 428355930}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &428355926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428355925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -58.850586, y: -7.377122, z: 2.7710023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6096537314022528993}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &428355928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428355925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7dd5707fb2aa3b429d32c20aae50437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelChunkData:
+  - {fileID: 11400000, guid: 762c33d76b8ebbc45adadf2dda69df0b, type: 2}
+  - {fileID: 11400000, guid: 767957045bbe3a946bdf17e2fc3cc074, type: 2}
+  - {fileID: 11400000, guid: fde340fcac8f18d4ba6c420ea43963a7, type: 2}
+  - {fileID: 11400000, guid: 5f625e8c91bd4094691c18f34bcaf0f4, type: 2}
+  - {fileID: 11400000, guid: 2ab31321e0e5f5b4e96dff30c7988c17, type: 2}
+  - {fileID: 11400000, guid: a68173a12f679ca418fb238e5ae6e64a, type: 2}
+  - {fileID: 11400000, guid: d4c27d28aa57f4747ad0b3a8c41d6631, type: 2}
+  firstChunk: {fileID: 11400000, guid: fde340fcac8f18d4ba6c420ea43963a7, type: 2}
+  spawnOrigin: {x: 0, y: 0, z: 0}
+  chunksToSpawn: 5
+  sizeofPool: 10
+--- !u!114 &428355927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428355925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3686ba0678d48d846a706f001d568115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &428355930
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428355925}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+>>>>>>> parent of 78d28f1... Revert "Working on GameOver Screen and game manager fun times"
 --- !u!1 &7610976260800789807
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,10 +123,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7610976260800789801}
+  - component: {fileID: 6096537314022528993}
   - component: {fileID: 7610976260800789806}
   - component: {fileID: 7610976260800789800}
   - component: {fileID: 7610976260800789803}
+  - component: {fileID: 5940360273741958773}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19,20 +135,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7610976260800789801
-Transform:
+--- !u!224 &6096537314022528993
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7610976260800789807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.850586, y: 7.377122, z: -2.7710023}
+  m_LocalPosition: {x: 0, y: 0, z: -2.7710023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 58.850586, y: 7.377122}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7610976260800789806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
   maxStressGrowthRate: 1
+  highestSpeed: 0
+  stressMaxTime: 10
+  stressTime: 0
 --- !u!114 &7610976260800789800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,3 +201,24 @@ MonoBehaviour:
   - {fileID: 3975193585062313334, guid: a076c63562716aa479dce1448d758995, type: 3}
   activeMiniGames: 0
   maxActiveMiniGames: 2
+--- !u!223 &5940360273741958773
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610976260800789807}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0

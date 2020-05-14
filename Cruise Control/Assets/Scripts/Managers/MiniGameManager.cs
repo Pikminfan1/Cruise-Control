@@ -27,7 +27,7 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
                 if (!minigameList[mg_index].IsPlaying)
                 {
                     //Debug.Log(GameManager.stressGrowthRate);
-                    minigameList[1].MiniGameStart();
+                    minigameList[mg_index].MiniGameStart();
                 }
             }
             miniGameGlobalTimer = 0;
