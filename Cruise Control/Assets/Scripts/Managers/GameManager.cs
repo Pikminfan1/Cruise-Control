@@ -93,6 +93,7 @@ public class GameManager : MonoSingleton<GameManager>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (stressAtMax)
         {
             stressTime += Time.deltaTime;
@@ -101,6 +102,9 @@ public class GameManager : MonoSingleton<GameManager>
         {
             stressTime = 0;
         }
+=======
+        Debug.Log(stressGrowthRate);
+>>>>>>> parent of 7295ffa... Revert "Trying to fix prefab"
 =======
         Debug.Log(stressGrowthRate);
 >>>>>>> parent of 7295ffa... Revert "Trying to fix prefab"
