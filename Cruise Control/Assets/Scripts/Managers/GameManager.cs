@@ -90,6 +90,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
+<<<<<<< HEAD
         if (stressAtMax)
         {
             stressTime += Time.deltaTime;
@@ -98,6 +99,9 @@ public class GameManager : MonoSingleton<GameManager>
         {
             stressTime = 0;
         }
+=======
+        Debug.Log(stressGrowthRate);
+>>>>>>> parent of 7295ffa... Revert "Trying to fix prefab"
         if (stressGrowthRate > 0)
         {
             if (!stressAtMax)
