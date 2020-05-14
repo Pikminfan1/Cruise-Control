@@ -27,6 +27,11 @@ public class MainMenuButtonFunctions : MonoBehaviour
 
     //}
 
+    public static void GameOver()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void Title()
     {
         SceneManager.LoadScene(0);

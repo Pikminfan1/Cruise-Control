@@ -46,7 +46,7 @@ public class GameManager : MonoSingleton<GameManager>
                 }
             }
         }
-        Debug.Log("Stress"+stress);
+        //Debug.Log("Stress"+stress);
     }
 
     public void TogglePauseMenu()
