@@ -28,7 +28,8 @@ public class GameManager : MonoSingleton<GameManager>
     public float avgSpeed;
     private int count;
     public static bool isThisGameOver = false;
-    
+    public AudioSource gameFX;
+    public AudioClip[] gameSounds;
 
 
 
