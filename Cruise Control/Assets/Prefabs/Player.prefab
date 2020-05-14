@@ -1458,7 +1458,7 @@ GameObject:
   - component: {fileID: 8907985102599183572}
   - component: {fileID: 8729035483463267980}
   m_Layer: 0
-  m_Name: CollisionSound
+  m_Name: PlayerSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,8 +1488,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a74f8470c6ea3a540ba4a398159d1bf7, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
@@ -3005,7 +3005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionFX: {fileID: 8729035483463267980}
-  collision: {fileID: 8300000, guid: a74f8470c6ea3a540ba4a398159d1bf7, type: 3}
+  playerSounds:
+  - {fileID: 8300000, guid: a74f8470c6ea3a540ba4a398159d1bf7, type: 3}
 --- !u!65 &6041453615584191253
 BoxCollider:
   m_ObjectHideFlags: 0

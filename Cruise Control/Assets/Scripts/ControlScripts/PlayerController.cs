@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public AudioSource CollisionFX;
+    public AudioClip[] playerSounds;
     //public AudioClip collision;
 
     public void Start()
@@ -18,8 +19,10 @@ public class PlayerController : MonoBehaviour
         //Weve hit a wall, p stressful
         if (collision.collider.gameObject.tag.Equals("Wall"))
         {
-            //crash sound effect
-            GetComponent<AudioSource>().Play(); 
+            //Play crash sound effect
+            CollisionFX.clip = playerSounds[0];
+            CollisionFX.volume = 0.15f;
+            CollisionFX.Play(); 
             Debug.Log("I hit a wall");
             GameManager.stress += 10;
             Debug.Log(GameManager.stress);
