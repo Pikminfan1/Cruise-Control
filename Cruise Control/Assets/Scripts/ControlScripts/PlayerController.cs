@@ -5,8 +5,8 @@ using UnityEngine;
 //Script will eventually be used for actions that don't involve driving such as the wind shield wipers and windows
 public class PlayerController : MonoBehaviour
 {
-
-    AudioClip collision;
+    public AudioSource CollisionFX;
+    //public AudioClip collision;
 
     public void Start()
     {

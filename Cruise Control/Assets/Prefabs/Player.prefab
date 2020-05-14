@@ -1490,7 +1490,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a74f8470c6ea3a540ba4a398159d1bf7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3004,6 +3004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05214ae4cd68370468cc07ef30621924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionFX: {fileID: 8729035483463267980}
+  collision: {fileID: 8300000, guid: a74f8470c6ea3a540ba4a398159d1bf7, type: 3}
 --- !u!65 &6041453615584191253
 BoxCollider:
   m_ObjectHideFlags: 0
