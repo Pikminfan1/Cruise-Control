@@ -18,5 +18,6 @@ public class LevelChunkData : ScriptableObject
     public GameObject[] levelChunks;
     public Direction entryDirection;
     public Direction exitDirection;
+    public static List<GameObject> pool = new List<GameObject>(10);
 
 }

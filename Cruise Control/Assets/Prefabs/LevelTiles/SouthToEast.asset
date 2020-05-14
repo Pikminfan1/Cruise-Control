@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e35549fe6af6448890ab8dcc87d084, type: 3}
   m_Name: SouthToEast
   m_EditorClassIdentifier: 
-  chunkSize: {x: 20, y: 20}
+  chunkSize: {x: 90, y: 90}
   levelChunks:
   - {fileID: 3055507253378937648, guid: c9e83d4f8ef020946b5560503296738a, type: 3}
-  entryDirection: 1
-  exitDirection: 2
+  entryDirection: 2
+  exitDirection: 1
