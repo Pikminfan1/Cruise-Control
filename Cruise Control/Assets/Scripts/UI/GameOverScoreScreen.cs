@@ -22,8 +22,8 @@ public class GameOverScoreScreen : MonoBehaviour
         things[0].GetComponent<Text>().text = (int)GameManager.Instance.highestSpeed +"";    
             things[1].GetComponent<Text>().text = (int)GameManager.Instance.avgSpeed +"";
             things[2].GetComponent<Text>().text = (int)(((int)GameManager.time / 10)*10) + "";  
-            //things[3].GetComponent<Text>().text = "";     
-            //things[4].GetComponent<Text>().text = "";     
+            things[3].GetComponent<Text>().text = "";     
+            things[4].GetComponent<Text>().text = "";     
             //things[5].GetComponent<Text>().text = "";     
     }
     IEnumerator waitScoreTime()
