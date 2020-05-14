@@ -17,5 +17,4 @@ public class PlayerPrefsText : MonoBehaviour
         speed = (int)CarController.CurrentSpeed;
         GetComponent<UnityEngine.UI.Text>().text = speed + "";
     }
-
 }
