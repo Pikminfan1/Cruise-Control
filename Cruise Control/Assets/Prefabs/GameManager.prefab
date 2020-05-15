@@ -1,6 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &428355925
 GameObject:
@@ -115,6 +116,8 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 >>>>>>> parent of 78d28f1... Revert "Working on GameOver Screen and game manager fun times"
+=======
+>>>>>>> parent of e4f1bf0... Created some assets/ scripts for minigames, nothing is working quite yet
 --- !u!1 &7610976260800789807
 GameObject:
   m_ObjectHideFlags: 0

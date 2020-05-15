@@ -16,7 +16,6 @@ public class Interact : MonoBehaviour
     public float highlightWidth = 0;
     public Color highlightColor;
     private MeshRenderer meshRend;
-   
     public virtual void Use()
     {
         Debug.Log("ATEMPTED TO " + interactName);
