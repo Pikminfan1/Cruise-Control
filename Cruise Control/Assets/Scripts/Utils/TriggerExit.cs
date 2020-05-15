@@ -24,11 +24,11 @@ public class TriggerExit : MonoBehaviour
             {
                 exited = true;
                 if (OnChunkExited != null) OnChunkExited();
-                //else Debug.Log("No Function To Run");
+                else Debug.Log("No Function To Run");
                 StartCoroutine(WaitAndDeactivate());
             }
-            else {//Debug.Log("Exited");
-        }
+            else Debug.Log("Exited");
+       // }
        // else Debug.Log("Cartag null");
     }
     IEnumerator WaitAndDeactivate()
