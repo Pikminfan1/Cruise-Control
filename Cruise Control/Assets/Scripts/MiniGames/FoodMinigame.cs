@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Minigame for crying child in back seat, This is an example of a minigame with interaction
-//inside the cabin, with out grabbing an object
-//
-public class ChildCryingMinigame : MiniGame
+public class FoodMinigame : MiniGame
 {
     public new float StressDelta;
 
     private string title;
     private string description;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-
+        MiniGameStart();
     }
+
     //Called to set stressgrowth delta back to the value it was
     //Before incrimenting by delta
     //Flags Playing to false and complete to true
@@ -24,43 +23,50 @@ public class ChildCryingMinigame : MiniGame
         //Set touchscreen texts back to initial once minigame ends
         PlayerPrefs.SetString("Title", "Cruise Control");
         PlayerPrefs.SetString("Description", "");
+        PlayerPrefs.SetString("Gauge", "");
 
         IsPlaying = false;
         IsComplete = true;
         GameManager.stressGrowthRate -= StressDelta;
     }
 
-    //Initializes the child crying loop and playing and complete flags
-    //The stress delta is added to the growth rate 
     public override void MiniGameStart()
     {
-        Debug.Log("ChildCrying Minigame");
+        Debug.Log("Food Minigame");
+
         //Initialize title and description
-        title = "Are We There Yet?";
-        description = "The kids in the backseat are yelling at you. \n" +
-            "Whip your head around to yell at them, but \n" +
-            "make sure you know what’s in front of you.";
+        title = "Are You Hungry?";
+        description = "You're so hungry. That burger looks really " +
+            "tempting right now. Eat the burger but continue to drive safely!";
 
         //Set minigame title and description on touchscreen
         PlayerPrefs.SetString("Title", title);
         PlayerPrefs.SetString("Description", description);
 
+        //Activate hunger gauge
+        GaugeScript.Instance.Activate();
+        PlayerPrefs.SetString("Gauge", "Hunger");
+
         StressDelta = 0.034f;
-        ChildCry.startCrying();
+        //Food.Appear();
         IsPlaying = true;
         IsComplete = false;
+
         GameManager.stressGrowthRate += StressDelta;
         Debug.Log(GameManager.stressGrowthRate);
+
+        if (GaugeScript.Instance.GetAmount() >= 1.0f)
+        {
+            Food.isEaten = true;
+        }
+
     }
 
-    //Check if the child is crying and end the minigame if they are done
     public override void Status()
     {
-        if (!ChildCry.isCrying)
+        if (Food.isEaten)
         {
-            
             MiniGameEnd();
         }
     }
-
 }
