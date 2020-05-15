@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a11e0e8e766d041af1d1c2e28bc246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 0}
+  pauseMenu: {fileID: 864306340532692256, guid: 29e2ac86d4383194fa4fa3131e27da68,
+    type: 3}
   maxStressGrowthRate: 1
 --- !u!114 &7610976260800789800
 MonoBehaviour:

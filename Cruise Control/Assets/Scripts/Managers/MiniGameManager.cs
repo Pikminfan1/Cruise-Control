@@ -23,7 +23,8 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
             if(activeMiniGames < maxActiveMiniGames)
             {
                 int mg_index = Random.Range(0, minigameList.Length-1);
-                //Debug.Log("Current mg index "+ minigameList[mg_index].IsPlaying);
+                Debug.Log("Current mg index "+ minigameList[mg_index].IsPlaying);
+                Debug.Log("Minigame #: " + mg_index);
                 if (!minigameList[mg_index].IsPlaying)
                 {
                     //Debug.Log(GameManager.stressGrowthRate);

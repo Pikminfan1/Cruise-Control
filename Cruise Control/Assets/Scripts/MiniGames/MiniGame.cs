@@ -16,6 +16,10 @@ public abstract class MiniGame : MonoBehaviour
     {
         IsPlaying = false;
         IsComplete = false;
+
+        PlayerPrefs.SetString("Title", "Cruise Control");
+        PlayerPrefs.SetString("Description", "");
+
     }
     public abstract void MiniGameStart();
     public abstract void MiniGameEnd();

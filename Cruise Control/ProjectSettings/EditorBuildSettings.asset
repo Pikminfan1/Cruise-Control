@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 00bdd151838de4f4395e91bb8ebcb430
   - enabled: 1
-    path: Assets/Scenes/Sam's Test Scene.unity
-    guid: 3750a73e6be4ec047bfd384a72f8d9f2
+    path: Assets/Scenes/Sam's Second Test Scene.unity
+    guid: 078c327b4480a294891c1baa0bcb585a
   m_configObjects: {}
