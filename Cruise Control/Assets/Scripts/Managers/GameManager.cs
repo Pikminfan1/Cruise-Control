@@ -39,7 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
         //makes sure pause menu isn't on at the start
         //UI.GetComponentInChildren<Canvas>().enabled = false;
         maxStress = 100;
-        stressTime = 0;
+        
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
         gameOverCanvas.SetActive(false);
@@ -80,8 +80,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void isGameOver()
     {
-        Debug.Log((int)stressTime > stressMaxTime);
-        if ((int)stressTime > stressMaxTime)
+        
+        if ((int)stressTime > (int)stressMaxTime)
         {
             isThisGameOver = true;
             GameOver();
@@ -91,23 +91,31 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-
+        Debug.Log(stress);
+        if (stress >= maxStress)
+        {
+            stressAtMax = true;
+        }
+        else
+        {
+            stressAtMax = false;
+        }
         if (stressAtMax)
         {
             stressTime += Time.deltaTime;
         }
         else
         {
-            stressTime = 0;
+            if (stressGrowthRate <= 0)
+            {
+                stressTime = 0;
+            }
         }
-
-
         if (!stressAtMax)
         {
 
             stress += stressGrowthRate;
         }
-
         else
         {
             if (stress > 0)
@@ -115,14 +123,7 @@ public class GameManager : MonoSingleton<GameManager>
                 stress -= stressDecayRate;
             }
         }
-        if (stress < maxStress)
-        {
-            stressAtMax = false;
-        }
-        else
-        {
-            stressAtMax = true;
-        }
+        
     }
 
 
@@ -130,8 +131,9 @@ public class GameManager : MonoSingleton<GameManager>
     //Update stress as long as its not above max, and not less than 0
     void Update()
     {
-        isGameOver();
+        
         growStress();
+        isGameOver();
         avergSpeed();
         Debug.Log("AtmaxStress: " + stressAtMax);
         time += Time.deltaTime;
