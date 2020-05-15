@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,17 +7,13 @@ public class GameManager : MonoSingleton<GameManager>
 {
     private static float _maxStress;
     public UIManager UI;
-    public GameObject gameOverCanvas;
-    public GameObject player;
     public static float stress;
-    public static int score;
-    public static float time;
-    public static DateTime startTime;
     public static float stressGrowthRate = 0.00f;
     public static float stressDecayRate = 0.05f;
     public float maxStressGrowthRate = 1.0f;
     public static bool stressAtMax = false;
     public static float maxStress;
+<<<<<<< HEAD
     public float highestSpeed;
     public static int minigamesCompleted;
     public int stressMaxTime = 10;
@@ -32,14 +27,17 @@ public class GameManager : MonoSingleton<GameManager>
 
 
 
+=======
+>>>>>>> parent of 7bae118... Working on GameOver Screen and game manager fun times
     // Start is called before the first frame update
     void Start()
     {
-        isThisGameOver = false;
+
         //makes sure pause menu isn't on at the start
         //UI.GetComponentInChildren<Canvas>().enabled = false;
         maxStress = 100;
         stressGrowthRate = 0f;
+<<<<<<< HEAD
         startTime = DateTime.Now;
         gameOverCanvas.SetActive(false);
     }
@@ -65,18 +63,13 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 avgSpeed += avgSpeed / count;
             }
-
-        }
+=======
     }
+>>>>>>> parent of 7bae118... Working on GameOver Screen and game manager fun times
 
-    private void GameOver()
-    {
-        calculateScore();
-        Debug.Log("here");
-        gameOverCanvas.SetActive(true);
-        //do anything else including propper menus reeset, etc
-    }
 
+
+<<<<<<< HEAD
     private void isGameOver()
     {
         Debug.Log((int)stressTime > stressMaxTime);
@@ -105,6 +98,20 @@ public class GameManager : MonoSingleton<GameManager>
         {
 
             stress += stressGrowthRate;
+=======
+    //Update stress as long as its not above max, and not less than 0
+    void Update()
+    {
+        stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
+        //Debug.Log(stressGrowthRate);
+        if (stressGrowthRate > 0)
+        {
+            if (stress < maxStress)
+            {
+                
+                stress += stressGrowthRate;
+            }
+>>>>>>> parent of 7bae118... Working on GameOver Screen and game manager fun times
         }
 
         else
@@ -114,6 +121,7 @@ public class GameManager : MonoSingleton<GameManager>
                 stress -= stressDecayRate;
             }
         }
+<<<<<<< HEAD
         if (stress < maxStress)
         {
             stressAtMax = false;
@@ -137,6 +145,8 @@ public class GameManager : MonoSingleton<GameManager>
         //Debug.Log(avgSpeed);
 
 
+=======
+>>>>>>> parent of 7bae118... Working on GameOver Screen and game manager fun times
     }
 
     public void TogglePauseMenu()
@@ -158,4 +168,3 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
 }
-
