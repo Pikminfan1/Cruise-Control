@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: roadStraight
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 965ad65861f5d1c41a5c61a1bceb11df, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 965ad65861f5d1c41a5c61a1bceb11df, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 965ad65861f5d1c41a5c61a1bceb11df, type: 3}
       propertyPath: m_RootOrder
       value: 1

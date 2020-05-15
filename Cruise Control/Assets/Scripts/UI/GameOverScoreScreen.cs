@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameOverScoreScreen : MonoBehaviour
 {
     public List<GameObject> things;
-
+    public AudioSource gameOver;
     float count;
     void Start()
     {
@@ -43,6 +43,7 @@ public class GameOverScoreScreen : MonoBehaviour
     {
         if (GameManager.isThisGameOver)
         {
+            gameOver.Play();
             activateScreen();
         }
        

@@ -87,8 +87,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void GameOver()
     {
+
         calculateScore();
-        Debug.Log("here");
+       // Debug.Log("here");
         gameOverCanvas.SetActive(true);
         //do anything else including propper menus reeset, etc
     }
@@ -106,7 +107,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-        Debug.Log(stressAtMax);
+        //Debug.Log(stressAtMax);
         if (stress >= maxStress)
         {
             stressAtMax = true;
@@ -146,7 +147,7 @@ public class GameManager : MonoSingleton<GameManager>
     //Update stress as long as its not above max, and not less than 0
     void Update()
     {
-        
+        //Debug.Log(ButtonActionManager.StartButtonIsDown);
         growStress();
         isGameOver();
         if (!isThisGameOver)

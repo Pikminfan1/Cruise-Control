@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7097937067550000372}
   m_Layer: 0
   m_Name: pCube7
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 8531555630085155557}
   m_Layer: 0
   m_Name: pCube5
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 4229611986043222263}
   m_Layer: 0
   m_Name: pCube10
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 5341633029298594771}
   m_Layer: 0
   m_Name: pCube9
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
