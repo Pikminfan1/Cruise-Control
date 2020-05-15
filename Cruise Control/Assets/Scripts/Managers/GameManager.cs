@@ -20,13 +20,13 @@ public class GameManager : MonoSingleton<GameManager>
     public static bool stressAtMax = false;
     public static float maxStress;
     public float highestSpeed;
-    public static int minigamesCompleted;
+    public int minigamesCompleted;
     public int stressMaxTime = 10;
     public float stressTime;
     private float avgTimer;
-    private int avgInt = 10;
+    private int avgInt = 100;
     public float avgSpeed;
-    private int count;
+    private float count;
     public static bool isThisGameOver = false;
 
 
@@ -54,6 +54,15 @@ public class GameManager : MonoSingleton<GameManager>
         {
             highestSpeed = CarController.CurrentSpeed;
         }
+        count += Time.deltaTime;
+        if((int)count > 2)
+        {
+            avgSpeed += CarController.CurrentSpeed;
+            avgSpeed /= 2;
+            count = 0;
+        }
+       
+        /*
         count++;
         if (count > avgInt)
         {
@@ -67,7 +76,7 @@ public class GameManager : MonoSingleton<GameManager>
                 avgSpeed += avgSpeed / count;
             }
 
-        }
+        }*/
     }
 
     private void GameOver()
@@ -91,7 +100,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-        Debug.Log(stress);
+        Debug.Log(stressAtMax);
         if (stress >= maxStress)
         {
             stressAtMax = true;
@@ -111,10 +120,12 @@ public class GameManager : MonoSingleton<GameManager>
                 stressTime = 0;
             }
         }
-        if (!stressAtMax)
+        if (stressGrowthRate>0)
         {
-
-            stress += stressGrowthRate;
+            if (stress < maxStress)
+            {
+                stress += stressGrowthRate;
+            }
         }
         else
         {
@@ -131,10 +142,13 @@ public class GameManager : MonoSingleton<GameManager>
     //Update stress as long as its not above max, and not less than 0
     void Update()
     {
-        
+
         growStress();
         isGameOver();
-        avergSpeed();
+        if (!isThisGameOver)
+        {
+            avergSpeed();
+        }
         Debug.Log("AtmaxStress: " + stressAtMax);
         time += Time.deltaTime;
         //Debug.Log(avgSpeed);

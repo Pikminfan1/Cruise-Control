@@ -39,6 +39,7 @@ public class ChildCryingMinigame : MiniGame
     {
         if (!ChildCry.isCrying)
         {
+            
             MiniGameEnd();
         }
     }
