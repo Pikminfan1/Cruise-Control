@@ -132,7 +132,7 @@ public class ButtonActionManager : MonoSingleton<ButtonActionManager> {
     {
         get
         {
-            return _startButtonIsDown;
+            return StartButtonIsDown;
         }
     }
     private static bool _leftBumperIsDown;

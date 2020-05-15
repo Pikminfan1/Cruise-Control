@@ -41,9 +41,4 @@ public class MainMenuButtonFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(a);
     }
-    public void Reload()
-    {
-        LevelLayoutGenerator.pool.Clear();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }

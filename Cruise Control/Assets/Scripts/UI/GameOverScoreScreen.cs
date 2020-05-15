@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameOverScoreScreen : MonoBehaviour
 {
     public List<GameObject> things;
-    public AudioSource gameOver;
+
     float count;
     void Start()
     {
@@ -28,11 +28,14 @@ public class GameOverScoreScreen : MonoBehaviour
         things[0].GetComponent<Text>().text = (int)GameManager.Instance.highestSpeed +" x 1 0";    
         things[1].GetComponent<Text>().text = (int)GameManager.Instance.avgSpeed +" x 1 0";
         things[2].GetComponent<Text>().text = "x "+mult + "";
-        things[4].GetComponent<Text>().text = GameManager.Instance.minigamesCompleted + " x 1 00";
+        things[4].GetComponent<Text>().text = GameManager.Instance.minigamesCompleted + " x 1 0 0";
         things[3].GetComponent<Text>().text = score + "";     
             //things[5].GetComponent<Text>().text = "";     
     }
-
+    IEnumerator waitScoreTime()
+    {
+        yield return new WaitForSeconds(1000000000.0f);
+    }
 
 
     // Update is called once per frame
@@ -40,7 +43,6 @@ public class GameOverScoreScreen : MonoBehaviour
     {
         if (GameManager.isThisGameOver)
         {
-            gameOver.Play();
             activateScreen();
         }
        

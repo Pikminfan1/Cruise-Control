@@ -21,8 +21,6 @@ public class ChildCry : Interact
     }
 
 
-
-
     //Called to begin audio loop and any other recurring behaviors for crying
     public static void startCrying()
     {

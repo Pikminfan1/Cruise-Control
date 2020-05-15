@@ -10,7 +10,7 @@ public abstract class MiniGame : MonoBehaviour
 {
     public bool IsPlaying;
     public bool IsComplete;
-    //public string name;
+    public string name;
     public string description;
     //public float StressDelta;
    // public abstract float StressDelta { get; set; }
