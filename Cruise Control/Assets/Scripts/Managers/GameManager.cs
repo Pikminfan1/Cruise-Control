@@ -28,6 +28,9 @@ public class GameManager : MonoSingleton<GameManager>
     public float avgSpeed;
     private float count;
     public static bool isThisGameOver = false;
+    public AudioSource gameFX;
+    public AudioClip[] gameSounds;
+
 
 
 
@@ -39,7 +42,7 @@ public class GameManager : MonoSingleton<GameManager>
         //makes sure pause menu isn't on at the start
         //UI.GetComponentInChildren<Canvas>().enabled = false;
         maxStress = 100;
-        
+
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
         gameOverCanvas.SetActive(false);
@@ -89,7 +92,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void isGameOver()
     {
-        
+
         if ((int)stressTime > (int)stressMaxTime)
         {
             isThisGameOver = true;
@@ -134,7 +137,7 @@ public class GameManager : MonoSingleton<GameManager>
                 stress -= stressDecayRate;
             }
         }
-        
+
     }
 
 
@@ -175,4 +178,3 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
 }
-
