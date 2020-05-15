@@ -39,6 +39,7 @@ public class GameManager : MonoSingleton<GameManager>
         //makes sure pause menu isn't on at the start
         //UI.GetComponentInChildren<Canvas>().enabled = false;
         maxStress = 100;
+        stressTime = 0;
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
         gameOverCanvas.SetActive(false);
