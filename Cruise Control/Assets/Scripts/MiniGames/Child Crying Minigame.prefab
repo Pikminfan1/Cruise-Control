@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4d39007fdfbd744a6def2e087a49f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlaying: 0
+  IsComplete: 0
+  description: 
+  StressDelta: 0

@@ -24,8 +24,17 @@ public class PlayerController : MonoBehaviour
             CollisionFX.volume = 0.15f;
             CollisionFX.Play(); 
             Debug.Log("I hit a wall");
-            GameManager.stress += 10;
-            Debug.Log(GameManager.stress);
+            //GameManager.stress += 10;
+            if(GameManager.stress + 10 > GameManager.maxStress)
+            {
+                GameManager.stress = GameManager.maxStress;
+            }
+            else
+            {
+                GameManager.stress += 10;
+            }
+            
+            //Debug.Log(GameManager.stress);
         }
     }
 }

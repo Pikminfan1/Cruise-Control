@@ -20,7 +20,7 @@ public class LevelLayoutGenerator : MonoBehaviour
 
     public int sizeofPool = 10;
 
-    private static List<PoolEntry> pool = new List<PoolEntry>();
+    public static List<PoolEntry> pool = new List<PoolEntry>();
 
     void OnEnable()
     {
@@ -88,16 +88,16 @@ public class LevelLayoutGenerator : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("Next: "+nextRequiredDirection);
+        //Debug.Log("Next: "+nextRequiredDirection);
 
         for(int i = 0; i < levelChunkData.Length; i++)
         {
             if (levelChunkData[i].entryDirection == nextRequiredDirection)
             {
-                Debug.Log("True - " + i);
+                //Debug.Log("True - " + i);
                 allowedChunkList.Add(levelChunkData[i]);
             }
-            else Debug.Log("False");
+            else;// Debug.Log("False");
             
         }
 
@@ -167,7 +167,7 @@ public class LevelLayoutGenerator : MonoBehaviour
         so I dont want to have us constantly calling it. So, it just needs to get called once or twice per tile.
         Also has == operators for Entry==TileTag and vice versa just to make things a bit easier.
     */
-    private struct PoolEntry
+    public struct PoolEntry
     {
         public GameObject go;
         public TileTag tag;
