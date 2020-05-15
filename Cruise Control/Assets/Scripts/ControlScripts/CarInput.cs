@@ -14,15 +14,18 @@ public class CarInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // pass the input to the car!
-        float h = ButtonActionManager.LeftStickDirection.x;
-        float v = ButtonActionManager.RightTriggerValue;
-        if (ButtonActionManager.RightBumperIsDown)
+        if (!GameManager.isThisGameOver)
         {
-            v *= -1;
+            // pass the input to the car!
+            float h = ButtonActionManager.LeftStickDirection.x;
+            float v = ButtonActionManager.RightTriggerValue;
+            if (ButtonActionManager.RightBumperIsDown)
+            {
+                v *= -1;
+            }
+            float handbrake = ButtonActionManager.LeftTriggerValue;
+            m_Car.Move(h, v, v, handbrake);
         }
-        float handbrake = ButtonActionManager.LeftTriggerValue;
-        m_Car.Move(h, v, v, handbrake);
 
     }
 }

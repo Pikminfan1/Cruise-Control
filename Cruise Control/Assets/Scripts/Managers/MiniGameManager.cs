@@ -12,18 +12,37 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
     public MiniGame[] minigameList;
     public int activeMiniGames = 0;
     public int maxActiveMiniGames = 2;
-
+    public int currentMaxTime = 10;
+    bool secondCheck = true;
     void updateMinigameCount()
     {
         Debug.Log(GameManager.Instance.minigamesCompleted);
         GameManager.Instance.minigamesCompleted++;
         return;
     }
+
+    private void FixedUpdate()
+    {
+        float timeTest = GameManager.time;
+        if (currentMaxTime > 3)
+        {
+            if ((int)timeTest % 30 == 29&&secondCheck)
+            {
+                currentMaxTime -= 2;
+                secondCheck = false;
+            }if((int)timeTest %31 == 30 && !secondCheck)
+            {
+                secondCheck = true;
+            }
+        }
+    }
     void Update()
     {
+        
+
         miniGameGlobalTimer += Time.deltaTime;
         //Attempt to initialize minigame if 10 seconds have passed
-        if (miniGameGlobalTimer  > 10)
+        if (miniGameGlobalTimer  > currentMaxTime)
         {
 
             if(activeMiniGames < maxActiveMiniGames)
@@ -33,7 +52,7 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
                 Debug.Log("Minigame #: " + mg_index);
                 if (!minigameList[mg_index].IsPlaying)
                 {
-                    //Debug.Log(GameManager.stressGrowthRate);
+                    Debug.Log("I MADE IT");
                     minigameList[mg_index].MiniGameStart();
                 }
             }
@@ -45,6 +64,10 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
            if(minigameList[i].IsPlaying)
             {
                 minigameList[i].Status();
+                if (GameManager.isThisGameOver)
+                {
+                    minigameList[i].IsPlaying = false;
+                }
 
             }
             else

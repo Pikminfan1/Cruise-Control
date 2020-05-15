@@ -45,7 +45,7 @@ public class ChildCryingMinigame : MiniGame
         PlayerPrefs.SetString("Title", title);
         PlayerPrefs.SetString("Description", description);
 
-        StressDelta = 0.034f;
+        StressDelta = 0.34f;
         ChildCry.startCrying();
         IsPlaying = true;
         IsComplete = false;

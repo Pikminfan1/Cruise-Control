@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 7610976260800789806}
   - component: {fileID: 7610976260800789800}
   - component: {fileID: 7610976260800789803}
+  - component: {fileID: 1249014632}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -167,7 +168,7 @@ MonoBehaviour:
   maxStressGrowthRate: 1
   highestSpeed: 0
   minigamesCompleted: 0
-  stressMaxTime: 10
+  stressMaxTime: 2
   stressTime: 0
   avgSpeed: 0
   gameFX: {fileID: 0}
@@ -202,6 +203,25 @@ MonoBehaviour:
   - {fileID: 3975193585062313334, guid: a076c63562716aa479dce1448d758995, type: 3}
   activeMiniGames: 0
   maxActiveMiniGames: 2
+--- !u!114 &1249014632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7610976260800789807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7d64aba0a9897459276ca2129d3599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relaxedTracks: []
+  mediumTracks: []
+  agressiveTracks: []
+  source1: {fileID: 0}
+  source2: {fileID: 0}
+  ds: {fileID: 0}
+  FadeDuration: 0
 --- !u!1001 &5123422045325793606
 PrefabInstance:
   m_ObjectHideFlags: 0
