@@ -15,6 +15,7 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
 
     void updateMinigameCount()
     {
+        Debug.Log(GameManager.Instance.minigamesCompleted);
         GameManager.Instance.minigamesCompleted++;
         return;
     }

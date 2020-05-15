@@ -12,15 +12,16 @@ public class stressMeter : MonoBehaviour
     
     private float GetStressRotation()
     {
+       
         float totalAngleSize = ZERO_STRESS_ANGLE - MAX_STRESS_ANGLE;
 
         float stressNormalized = GameManager.stress / GameManager.maxStress;
-
         return ZERO_STRESS_ANGLE - stressNormalized * totalAngleSize;
     }
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(GetStressRotation());
         needleTransform.eulerAngles = new Vector3(0, 0, GetStressRotation());
     }
     protected void LateUpdate()

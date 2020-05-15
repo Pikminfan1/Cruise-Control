@@ -27,7 +27,7 @@ public class GameOverScoreScreen : MonoBehaviour
         int score = ((GameManager.Instance.minigamesCompleted*100) + ((int)GameManager.Instance.highestSpeed*10) + ((int)GameManager.Instance.avgSpeed)*10)*mult;
         things[0].GetComponent<Text>().text = (int)GameManager.Instance.highestSpeed +" x 1 0";    
         things[1].GetComponent<Text>().text = (int)GameManager.Instance.avgSpeed +" x 1 0";
-        things[2].GetComponent<Text>().text = "x "+(int)(((int)GameManager.time / 10)) + "";
+        things[2].GetComponent<Text>().text = "x "+mult + "";
         things[4].GetComponent<Text>().text = GameManager.Instance.minigamesCompleted + " x 1 0 0";
         things[3].GetComponent<Text>().text = score + "";     
             //things[5].GetComponent<Text>().text = "";     

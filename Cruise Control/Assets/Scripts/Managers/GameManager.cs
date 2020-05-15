@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     public static float stressDecayRate = 0.05f;
     public float maxStressGrowthRate = 1.0f;
     public static bool stressAtMax = false;
-    public static float maxStress;
+    public static float maxStress = 100;
     public float highestSpeed;
     public int minigamesCompleted;
     public int stressMaxTime = 10;
@@ -40,15 +40,15 @@ public class GameManager : MonoSingleton<GameManager>
     void Start()
     {
         isThisGameOver = false;
-
-        //makes sure pause menu isn't on at the start
-        pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
-
+        stress = 0;
         maxStress = 100;
 
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
-        gameOverCanvas.SetActive(false);
+        //makes sure pause menu isn't on at the start
+        pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
+  
+        //gameOverCanvas.SetActive(false);
     }
     private int calculateScore()
     {
@@ -126,32 +126,32 @@ public class GameManager : MonoSingleton<GameManager>
                 stressTime = 0;
             }
         }
-        if (stressGrowthRate>0)
+        if (stressGrowthRate > 0)
         {
-            stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-            //Debug.Log(stressGrowthRate);
-            if (stressGrowthRate > 0)
+            if (!stressAtMax)
             {
                 stress += stressGrowthRate;
             }
-            else
+        }
+        else
+        {
+            if (stress > 0)
             {
-                if (stress > 0)
-                {
-                    stress -= stressDecayRate;
-                }
+                stress -= stressDecayRate;
             }
         }
+
     }
     bool tenCheck = true;
     //Update stress as long as its not above max, and not less than 0
     void Update()
     {
-
+        
         growStress();
         isGameOver();
         if (!isThisGameOver)
         {
+            gameOverCanvas.SetActive(false);
             avergSpeed();
         }
         Debug.Log("AtmaxStress: " + stressAtMax);
