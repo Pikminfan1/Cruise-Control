@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Cruise Control/Assets/Scenes/PlayerControlTestScene2.unity.meta
+guid: 5a61818e0fcf45a4b9d31b81b19a42ef
+=======
 guid: 1a8365030ec1241428a9b2ae1992ae24
 folderAsset: yes
+>>>>>>> master:Cruise Control/Assets/Scripts/Interactions.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

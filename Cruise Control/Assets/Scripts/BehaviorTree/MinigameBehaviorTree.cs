@@ -10,10 +10,20 @@ public class MinigameBehaviorTree : MonoBehaviour
     private bool phoneIsActive;
 
     //All the nodes in the tree
-    public TaskNode coneActiveNode;
-    public TaskNode phoneActiveNode;
-    public Sequence activateObjectsSequence;
+    //public TaskNode coneActiveNode;
+    //public TaskNode phoneActiveNode;
+    //public Sequence activateObjectsSequence;
+    public TaskNode childGameNode;
+    public TaskNode trashGameNode;
+    public TaskNode foodGameNode;
+    public TaskNode drinkGameNode;
+    public TaskNode coneGameNode;
+    public Sequence childAndOtherSequence;
+    public Sequence childAndTwoOthersSequence;
     public Selector rootNode;
+
+    //Minigames
+    ChildCryingMinigame cmg;
 
     public delegate void TreeExecuted();
     public event TreeExecuted onTreeExecuted;
@@ -21,34 +31,75 @@ public class MinigameBehaviorTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cone = GameObject.Find("trafficcone");
-        cone.SetActive(false);
-        coneIsActive = false;
+        //cone = GameObject.Find("trafficcone");
+        //cone.SetActive(false);
+        //coneIsActive = false;
 
-        phone = GameObject.Find("cellphone");
-        phone.SetActive(false);
-        phoneIsActive = false;
+        //phone = GameObject.Find("cellphone");
+        //phone.SetActive(false);
+        //phoneIsActive = false;
 
-        coneActiveNode = new TaskNode(ActivateCone);
+        //coneActiveNode = new TaskNode(ActivateCone);
 
-        phoneActiveNode = new TaskNode(ActivatePhone);
+        //phoneActiveNode = new TaskNode(ActivatePhone);
 
-        activateObjectsSequence = new Sequence(new List<Node>
-        {
-            coneActiveNode,
-            phoneActiveNode,
+        //activateObjectsSequence = new Sequence(new List<Node>
+        //{
+        //    coneActiveNode,
+        //    phoneActiveNode,
+        //});
+
+        //rootNode = new Selector(new List<Node>
+        //{
+        //    activateObjectsSequence,
+        //});
+
+        //Initialize minigame
+        cmg = new ChildCryingMinigame();
+
+    }
+
+    public void buildTree()
+    {
+        //initiliaze nodes
+        childGameNode = new TaskNode(CheckChildGame);
+        //trashGameNode = new TaskNode(CheckTrashGame);
+        //foodGameNode = new TaskNode(CheckFoodGame);
+        //drinkGameNode = new TaskNode(CheckDrinkGame);
+        //coneGameNode = new TaskNode(CheckConeGame);
+
+        TaskNode [] part_mg_list = new TaskNode[] { trashGameNode, foodGameNode, drinkGameNode, coneGameNode };
+        //for choosing a random minigame to partner with sequence games
+        int mg_index = Random.Range(0, part_mg_list.Length-1);
+
+        //attaching nodes to tree
+ 
+        childAndOtherSequence = new Sequence(new List<Node> {
+            childGameNode,
+            part_mg_list[mg_index],
         });
 
-        rootNode = new Selector(new List<Node>
-        {
-            activateObjectsSequence,
+        childAndTwoOthersSequence = new Sequence(new List<Node> {
+            childGameNode,
+            trashGameNode,
+            coneGameNode,
+        });
+
+        rootNode = new Selector(new List<Node> {
+            childGameNode,
+            trashGameNode,
+            foodGameNode,
+            drinkGameNode,
+            coneGameNode,
+            childAndOtherSequence,
+            childAndTwoOthersSequence,
         });
     }
 
     private void Update()
     {
-        //Executes the behavior tree every update
-        this.Evaluate();
+        ////Executes the behavior tree every update
+        //this.Evaluate();
     }
 
     public void Evaluate()
@@ -61,7 +112,7 @@ public class MinigameBehaviorTree : MonoBehaviour
     private IEnumerator Execute()
     {
         //Debug.Log("Waiting...");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
 
 
         //if (coneActiveNode.nodeState() == NodeStates.SUCCESS)
@@ -76,13 +127,18 @@ public class MinigameBehaviorTree : MonoBehaviour
         //}
 
         //Here is where the action happens if a node is a success
-        if(activateObjectsSequence.nodeState() == NodeStates.SUCCESS)
+        //if(activateObjectsSequence.nodeState() == NodeStates.SUCCESS)
+        //{
+        //    Debug.Log("Activate Objects");
+        //    cone.SetActive(true);
+        //    coneIsActive = true;
+        //    phone.SetActive(true);
+        //    phoneIsActive = true;
+        //}
+
+        if(childGameNode.nodeState() == NodeStates.SUCCESS)
         {
-            Debug.Log("Activate Objects");
-            cone.SetActive(true);
-            coneIsActive = true;
-            phone.SetActive(true);
-            phoneIsActive = true;
+            cmg.MiniGameStart();
         }
 
         if(onTreeExecuted != null)
@@ -91,10 +147,9 @@ public class MinigameBehaviorTree : MonoBehaviour
         }
     }
 
-
-    private NodeStates ActivateCone()
+    private NodeStates CheckChildGame()
     {
-        if (!coneIsActive)
+        if (!cmg.IsPlaying)
         {
             return NodeStates.SUCCESS;
         }
@@ -104,15 +159,75 @@ public class MinigameBehaviorTree : MonoBehaviour
         }
     }
 
-    private NodeStates ActivatePhone()
-    {
-        if (!phoneIsActive)
-        {
-            return NodeStates.SUCCESS;
-        }
-        else
-        {
-            return NodeStates.FAILURE;
-        }
-    }
+    //private NodeStates CheckTrashGame()
+    //{
+    //    if (!TrashMinigame.IsPlaying)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
+
+    //private NodeStates CheckFoodGame()
+    //{
+    //    if (!FoodMinigame.IsPlaying)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
+
+    //private NodeStates CheckDrinkGame()
+    //{
+    //    if (!DrinkMinigame.IsPlaying)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
+
+    //private NodeStates CheckConeGame()
+    //{
+    //    if (!ConeMinigame.IsPlaying)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
+
+    //private NodeStates ActivateCone()
+    //{
+    //    if (!coneIsActive)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
+
+    //private NodeStates ActivatePhone()
+    //{
+    //    if (!phoneIsActive)
+    //    {
+    //        return NodeStates.SUCCESS;
+    //    }
+    //    else
+    //    {
+    //        return NodeStates.FAILURE;
+    //    }
+    //}
 }

@@ -8,15 +8,23 @@ using UnityEngine;
 public class ChildCryingMinigame : MiniGame
 {
     public new float StressDelta;
+
+    private string title;
+    private string description;
+
     private void Start()
     {
-        
+
     }
     //Called to set stressgrowth delta back to the value it was
     //Before incrimenting by delta
     //Flags Playing to false and complete to true
     public override void MiniGameEnd()
     {
+        //Set touchscreen texts back to initial once minigame ends
+        PlayerPrefs.SetString("Title", "Cruise Control");
+        PlayerPrefs.SetString("Description", "");
+
         IsPlaying = false;
         IsComplete = true;
         GameManager.stressGrowthRate -= StressDelta;
@@ -26,6 +34,16 @@ public class ChildCryingMinigame : MiniGame
     //The stress delta is added to the growth rate 
     public override void MiniGameStart()
     {
+        //Initialize title and description
+        title = "Are We There Yet?";
+        description = "The kids in the backseat are yelling at you. \n" +
+            "Whip your head around to yell at them, but \n" +
+            "make sure you know what’s in front of you.";
+
+        //Set minigame title and description on touchscreen
+        PlayerPrefs.SetString("Title", title);
+        PlayerPrefs.SetString("Description", description);
+
         StressDelta = 0.034f;
         ChildCry.startCrying();
         IsPlaying = true;
@@ -39,7 +57,9 @@ public class ChildCryingMinigame : MiniGame
     {
         if (!ChildCry.isCrying)
         {
+            
             MiniGameEnd();
         }
     }
+
 }

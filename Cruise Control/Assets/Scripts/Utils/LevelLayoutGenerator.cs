@@ -8,8 +8,9 @@ using UnityEngine;
 public class LevelLayoutGenerator : MonoBehaviour
 {
     public LevelChunkData[] levelChunkData;
+    //public GameObject player;
     public LevelChunkData firstChunk;
-
+    public GameObject removewall;
     private LevelChunkData previousChunk;
 
     public Vector3 spawnOrigin;
@@ -28,6 +29,7 @@ public class LevelLayoutGenerator : MonoBehaviour
 
     private void OnDisable()
     {
+        
         TriggerExit.OnChunkExited -= PickAndSpawnChunk;
     }
 
@@ -38,6 +40,7 @@ public class LevelLayoutGenerator : MonoBehaviour
         {
             PickAndSpawnChunk();
         }
+
     }
 
     private void Start()
@@ -49,10 +52,16 @@ public class LevelLayoutGenerator : MonoBehaviour
             PickAndSpawnChunk();
 
         }
+        safetyBool = true;
     }
-
+    //Hacked this to add a wall at the start
+    private bool safetyBool = false;
     LevelChunkData PickNextChunk()
     {
+        if (safetyBool)
+        {
+            removewall.SetActive(false);
+        }
         List<LevelChunkData> allowedChunkList = new List<LevelChunkData>();
         LevelChunkData nextChunk = null;
 

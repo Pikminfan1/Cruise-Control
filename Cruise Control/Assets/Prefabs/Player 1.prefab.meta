@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Cruise Control/Assets/Prefabs/Player 1.prefab.meta
 guid: 5badbdcdf22dcb143b435ace7f0c6955
 PrefabImporter:
+=======
+guid: 90ed23bdee861a3499621c1543ba5810
+folderAsset: yes
+DefaultImporter:
+>>>>>>> master:Cruise Control/Assets/Scripts/MiniGames.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

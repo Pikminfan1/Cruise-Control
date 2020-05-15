@@ -10,6 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     public UIManager UI;
     public GameObject gameOverCanvas;
     public GameObject player;
+    public UIManager pauseMenu;
     public static float stress;
     public static int score;
     public static float time;
@@ -18,16 +19,19 @@ public class GameManager : MonoSingleton<GameManager>
     public static float stressDecayRate = 0.05f;
     public float maxStressGrowthRate = 1.0f;
     public static bool stressAtMax = false;
-    public static float maxStress;
+    public static float maxStress = 100;
     public float highestSpeed;
-    public static int minigamesCompleted;
+    public int minigamesCompleted;
     public int stressMaxTime = 10;
     public float stressTime;
     private float avgTimer;
-    private int avgInt = 10;
+    private int avgInt = 100;
     public float avgSpeed;
-    private int count;
+    private float count;
     public static bool isThisGameOver = false;
+    public AudioSource gameFX;
+    public AudioClip[] gameSounds;
+
 
 
 
@@ -36,13 +40,15 @@ public class GameManager : MonoSingleton<GameManager>
     void Start()
     {
         isThisGameOver = false;
-        //makes sure pause menu isn't on at the start
-        //UI.GetComponentInChildren<Canvas>().enabled = false;
+        stress = 0;
         maxStress = 100;
-        
+
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
-        gameOverCanvas.SetActive(false);
+        //makes sure pause menu isn't on at the start
+        pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
+  
+        //gameOverCanvas.SetActive(false);
     }
     private int calculateScore()
     {
@@ -54,6 +60,15 @@ public class GameManager : MonoSingleton<GameManager>
         {
             highestSpeed = CarController.CurrentSpeed;
         }
+        count += Time.deltaTime;
+        if((int)count > 2)
+        {
+            avgSpeed += CarController.CurrentSpeed;
+            avgSpeed /= 2;
+            count = 0;
+        }
+       
+        /*
         count++;
         if (count > avgInt)
         {
@@ -67,7 +82,7 @@ public class GameManager : MonoSingleton<GameManager>
                 avgSpeed += avgSpeed / count;
             }
 
-        }
+        }*/
     }
 
     private void GameOver()
@@ -80,7 +95,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void isGameOver()
     {
-        
+
         if ((int)stressTime > (int)stressMaxTime)
         {
             isThisGameOver = true;
@@ -91,7 +106,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-        Debug.Log(stress);
+        Debug.Log(stressAtMax);
         if (stress >= maxStress)
         {
             stressAtMax = true;
@@ -111,10 +126,12 @@ public class GameManager : MonoSingleton<GameManager>
                 stressTime = 0;
             }
         }
-        if (!stressAtMax)
+        if (stressGrowthRate > 0)
         {
-
-            stress += stressGrowthRate;
+            if (!stressAtMax)
+            {
+                stress += stressGrowthRate;
+            }
         }
         else
         {
@@ -123,10 +140,8 @@ public class GameManager : MonoSingleton<GameManager>
                 stress -= stressDecayRate;
             }
         }
-        
+
     }
-
-
     bool tenCheck = true;
     //Update stress as long as its not above max, and not less than 0
     void Update()
@@ -134,26 +149,29 @@ public class GameManager : MonoSingleton<GameManager>
         
         growStress();
         isGameOver();
-        avergSpeed();
+        if (!isThisGameOver)
+        {
+            gameOverCanvas.SetActive(false);
+            avergSpeed();
+        }
         Debug.Log("AtmaxStress: " + stressAtMax);
         time += Time.deltaTime;
         //Debug.Log(avgSpeed);
-
 
     }
 
     public void TogglePauseMenu()
     {
-        if (UI.GetComponentInChildren<Canvas>().enabled)
+        if (pauseMenu.GetComponentInChildren<Canvas>().enabled)
         {
             //turn pause menu off
-            UI.GetComponentInChildren<Canvas>().enabled = false;
+            pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
             Time.timeScale = 1.0f;
         }
         else
         {
             //turn pause menu on
-            UI.GetComponentInChildren<Canvas>().enabled = true;
+            pauseMenu.GetComponentInChildren<Canvas>().enabled = true;
             Time.timeScale = 0f;
         }
 
@@ -161,4 +179,3 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
 }
-

@@ -12,8 +12,11 @@ public class GetTimeUI : MonoBehaviour
 
     void Update()
     {
-        time = DateTime.Now - GameManager.startTime;
-        GetComponent<UnityEngine.UI.Text>().text = formatTime();
+        if (!GameManager.isThisGameOver)
+        {
+            time = DateTime.Now - GameManager.startTime;
+            GetComponent<UnityEngine.UI.Text>().text = formatTime();
+        }
     }
     string formatTime()
     {
