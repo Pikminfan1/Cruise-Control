@@ -308,4 +308,11 @@ public class CarController : MonoSingleton<CarController>
             }
         }
     }
+
+    private void Update()
+    {
+        int speed = (int)CurrentSpeed;
+        //Debug.Log("Speed: " + speed);
+        PlayerPrefs.SetFloat("Speed", speed);
+    }
 }

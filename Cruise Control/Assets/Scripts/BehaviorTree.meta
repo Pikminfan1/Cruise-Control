@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Cruise Control/Assets/Scripts/BehaviorTree.meta
 guid: 17b9a8ef000d61e47b433f0a9641c8f0
+=======
+guid: a7533da44b7e7da439acbd949c3e2d46
+>>>>>>> master:Cruise Control/Assets/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

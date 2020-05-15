@@ -121,6 +121,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &146991078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3899700644566190783, guid: 1052592e4380e484d9cc6ea3c38ed57c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1217282580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &146991079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146991078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625d4eec2590435468abba0d58d816b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+--- !u!114 &146991082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146991078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05e06be5a5886848925a25bd75fdc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: Time
+  words: None
+--- !u!1 &204116738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 887907874, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 475194266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &204116742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204116738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05e06be5a5886848925a25bd75fdc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: None
+  words: Description
 --- !u!1 &250446663
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +282,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58270590, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
+      propertyPath: name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 58270590, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
+      propertyPath: number
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 58270590, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
+      propertyPath: words
+      value: None
+      objectReference: {fileID: 0}
+    - target: {fileID: 887907876, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121847486, guid: 5b6a61c415f05384bb759dbbc68bbcf8, type: 3}
+      propertyPath: m_Text
+      value: Cruise Control
+      objectReference: {fileID: 0}
     - target: {fileID: 6041453615578331458, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
         type: 3}
       propertyPath: m_Name
@@ -287,6 +360,16 @@ PrefabInstance:
     - target: {fileID: 6041453615578331460, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731767698931642216, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9186423305132142598, guid: 5b6a61c415f05384bb759dbbc68bbcf8,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

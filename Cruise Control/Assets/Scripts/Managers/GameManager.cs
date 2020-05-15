@@ -10,6 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     public UIManager UI;
     public GameObject gameOverCanvas;
     public GameObject player;
+    public UIManager pauseMenu;
     public static float stress;
     public static int score;
     public static float time;
@@ -39,8 +40,10 @@ public class GameManager : MonoSingleton<GameManager>
     void Start()
     {
         isThisGameOver = false;
+
         //makes sure pause menu isn't on at the start
-        //UI.GetComponentInChildren<Canvas>().enabled = false;
+        pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
+
         maxStress = 100;
 
         stressGrowthRate = 0f;
@@ -125,22 +128,21 @@ public class GameManager : MonoSingleton<GameManager>
         }
         if (stressGrowthRate>0)
         {
-            if (stress < maxStress)
+            stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
+            //Debug.Log(stressGrowthRate);
+            if (stressGrowthRate > 0)
             {
                 stress += stressGrowthRate;
             }
-        }
-        else
-        {
-            if (stress > 0)
+            else
             {
-                stress -= stressDecayRate;
+                if (stress > 0)
+                {
+                    stress -= stressDecayRate;
+                }
             }
         }
-
     }
-
-
     bool tenCheck = true;
     //Update stress as long as its not above max, and not less than 0
     void Update()
@@ -156,21 +158,20 @@ public class GameManager : MonoSingleton<GameManager>
         time += Time.deltaTime;
         //Debug.Log(avgSpeed);
 
-
     }
 
     public void TogglePauseMenu()
     {
-        if (UI.GetComponentInChildren<Canvas>().enabled)
+        if (pauseMenu.GetComponentInChildren<Canvas>().enabled)
         {
             //turn pause menu off
-            UI.GetComponentInChildren<Canvas>().enabled = false;
+            pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
             Time.timeScale = 1.0f;
         }
         else
         {
             //turn pause menu on
-            UI.GetComponentInChildren<Canvas>().enabled = true;
+            pauseMenu.GetComponentInChildren<Canvas>().enabled = true;
             Time.timeScale = 0f;
         }
 

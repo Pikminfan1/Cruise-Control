@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 134ab821966bcef43b37abddac63bbe1
+guid: c6ce35ee43efbb54fb5a4643b11c8228
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: orange_texture
-    second: {fileID: 2100000, guid: a86d4691190412246b41ae214431b800, type: 2}
+      name: streetlight_blackmetal
+    second: {fileID: 2100000, guid: bd82afb6a427e92439fcf1cae09169a0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: white_texture
-    second: {fileID: 2100000, guid: bddc8177e14f2494ca529f25658efad0, type: 2}
+      name: streetlight_glass
+    second: {fileID: 2100000, guid: 744b9a4074a5e6545a5328dad255ff50, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -44,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 80
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 80
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

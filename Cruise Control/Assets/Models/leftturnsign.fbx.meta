@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 134ab821966bcef43b37abddac63bbe1
+guid: ccea7d724f0eb244cb5311d3f0591905
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: orange_texture
-    second: {fileID: 2100000, guid: a86d4691190412246b41ae214431b800, type: 2}
+      name: aiStandardSurface1
+    second: {fileID: 2100000, guid: df797f6dfa1d7b34ab2d3d92c678f5b5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: white_texture
-    second: {fileID: 2100000, guid: bddc8177e14f2494ca529f25658efad0, type: 2}
+      name: aiStandardSurface2
+    second: {fileID: 2100000, guid: ec5a070037fb135499e4cfd2d05baeb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 401c761011dc35648b501ca3ff1189d6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
