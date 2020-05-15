@@ -32,10 +32,7 @@ public class GameOverScoreScreen : MonoBehaviour
         things[3].GetComponent<Text>().text = score + "";     
             //things[5].GetComponent<Text>().text = "";     
     }
-    IEnumerator waitScoreTime()
-    {
-        yield return new WaitForSeconds(1000000000.0f);
-    }
+
 
 
     // Update is called once per frame
