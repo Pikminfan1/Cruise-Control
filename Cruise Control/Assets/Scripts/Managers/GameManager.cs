@@ -27,11 +27,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     //Update stress as long as its not above max, and not less than 0
     void Update()
-    {
-        stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-
-
-
+	{
         if (stressAtMax)
         {
             stressTime += Time.deltaTime;
@@ -40,6 +36,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             stressTime = 0;
         }
+
 
         if (stressGrowthRate > 0)
         {
