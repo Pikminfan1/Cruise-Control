@@ -29,6 +29,7 @@ public class GameManager : MonoSingleton<GameManager>
     void Update()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
+<<<<<<< HEAD
 
 
         if (stressAtMax)
@@ -41,6 +42,9 @@ public class GameManager : MonoSingleton<GameManager>
         }
 
 
+=======
+        //Debug.Log(stressGrowthRate);
+>>>>>>> parent of 7bae118... Working on GameOver Screen and game manager fun times
         if (stressGrowthRate > 0)
         {
             if (stress < maxStress)
