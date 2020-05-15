@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1382736207584637756}
   - component: {fileID: 5338059404795829325}
   - component: {fileID: 5895672150819123095}
-  - component: {fileID: 180937010836576303}
   m_Layer: 0
   m_Name: Child
   m_TagString: Interactable
@@ -91,12 +90,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9217681915046652511}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 2.352055
-  m_Height: 4.70411
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999994
+  m_Height: 1.9999998
   m_Direction: 1
-  m_Center: {x: 0, y: 0.00000023841858, z: 0.39090967}
+  m_Center: {x: 0, y: 0.00000023841856, z: 0}
 --- !u!114 &5338059404795829325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,16 +210,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &180937010836576303
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217681915046652511}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.932179, y: 3.9425392, z: 1.2689338}
-  m_Center: {x: -0.38235354, y: 0.9712696, z: -0.041488886}

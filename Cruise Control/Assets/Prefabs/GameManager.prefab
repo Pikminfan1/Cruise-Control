@@ -30,7 +30,7 @@ Transform:
   m_LocalPosition: {x: -58.850586, y: -7.377122, z: 2.7710023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6096537314022528993}
+  m_Father: {fileID: 7610976260800789801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &428355928
@@ -120,11 +120,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6096537314022528993}
+  - component: {fileID: 7610976260800789801}
   - component: {fileID: 7610976260800789806}
   - component: {fileID: 7610976260800789800}
   - component: {fileID: 7610976260800789803}
-  - component: {fileID: 5940360273741958773}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -132,26 +131,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6096537314022528993
-RectTransform:
+--- !u!4 &7610976260800789801
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7610976260800789807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.7710023}
+  m_LocalPosition: {x: 58.850586, y: 7.377122, z: -2.7710023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428355926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.850586, y: 7.377122}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7610976260800789806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,9 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
   maxStressGrowthRate: 1
-  highestSpeed: 0
-  stressMaxTime: 10
-  stressTime: 0
 --- !u!114 &7610976260800789800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,24 +190,3 @@ MonoBehaviour:
   - {fileID: 3975193585062313334, guid: a076c63562716aa479dce1448d758995, type: 3}
   activeMiniGames: 0
   maxActiveMiniGames: 2
---- !u!223 &5940360273741958773
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7610976260800789807}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0

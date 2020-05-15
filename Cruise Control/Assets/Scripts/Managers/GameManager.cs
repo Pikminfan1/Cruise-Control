@@ -34,6 +34,7 @@ public class GameManager : MonoSingleton<GameManager>
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,17 +42,18 @@ public class GameManager : MonoSingleton<GameManager>
         //makes sure pause menu isn't on at the start
         //UI.GetComponentInChildren<Canvas>().enabled = false;
         maxStress = 100;
+
         stressGrowthRate = 0f;
         startTime = DateTime.Now;
         gameOverCanvas.SetActive(false);
     }
     private int calculateScore()
     {
-        return ((int)avgSpeed * 10) + (minigamesCompleted * 10) + (int)time * 100 + ((int)highestSpeed * 10); 
+        return ((int)avgSpeed * 10) + (minigamesCompleted * 10) + (int)time * 100 + ((int)highestSpeed * 10);
     }
     private void avergSpeed()
     {
-        if(highestSpeed < CarController.CurrentSpeed)
+        if (highestSpeed < CarController.CurrentSpeed)
         {
             highestSpeed = CarController.CurrentSpeed;
         }
@@ -81,8 +83,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void isGameOver()
     {
-        Debug.Log((int)stressTime>stressMaxTime);
-        if((int)stressTime > stressMaxTime )
+
+        if ((int)stressTime > (int)stressMaxTime)
         {
             isThisGameOver = true;
             GameOver();
@@ -92,21 +94,30 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
+        Debug.Log(stress);
+        if (stress >= maxStress)
+        {
+            stressAtMax = true;
+        }
+        else
+        {
+            stressAtMax = false;
+        }
         if (stressAtMax)
         {
             stressTime += Time.deltaTime;
         }
         else
         {
-            stressTime = 0;
-        }
-        if (stressGrowthRate > 0)
-        {
-            if (!stressAtMax)
+            if (stressGrowthRate <= 0)
             {
-
-                stress += stressGrowthRate;
+                stressTime = 0;
             }
+        }
+        if (!stressAtMax)
+        {
+
+            stress += stressGrowthRate;
         }
         else
         {
@@ -115,14 +126,7 @@ public class GameManager : MonoSingleton<GameManager>
                 stress -= stressDecayRate;
             }
         }
-        if(stress < maxStress)
-        {
-            stressAtMax = false;
-        }
-        else
-        {
-            stressAtMax = true;
-        }
+
     }
 
 
@@ -130,14 +134,15 @@ public class GameManager : MonoSingleton<GameManager>
     //Update stress as long as its not above max, and not less than 0
     void Update()
     {
-        isGameOver();
+
         growStress();
+        isGameOver();
         avergSpeed();
-        Debug.Log("AtmaxStress: " +stressAtMax);
+        Debug.Log("AtmaxStress: " + stressAtMax);
         time += Time.deltaTime;
         //Debug.Log(avgSpeed);
 
-       
+
     }
 
     public void TogglePauseMenu()
@@ -157,6 +162,5 @@ public class GameManager : MonoSingleton<GameManager>
 
         Debug.Log("GAMEMANAGER:: TimeScale: " + Time.timeScale);
     }
-    
-}
 
+}
