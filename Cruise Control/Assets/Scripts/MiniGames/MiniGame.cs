@@ -10,7 +10,7 @@ public abstract class MiniGame : MonoBehaviour
 {
     public bool IsPlaying;
     public bool IsComplete;
-    public string name;
+    //public string name;
     public string description;
     //public float StressDelta;
    // public abstract float StressDelta { get; set; }
@@ -20,6 +20,10 @@ public abstract class MiniGame : MonoBehaviour
         description = "NONE";
         IsPlaying = false;
         IsComplete = false;
+
+        PlayerPrefs.SetString("Title", "Cruise Control");
+        PlayerPrefs.SetString("Description", "");
+
     }
     public abstract void MiniGameStart();
     public abstract void MiniGameEnd();

@@ -34,6 +34,7 @@ public class ChildCryingMinigame : MiniGame
     //The stress delta is added to the growth rate 
     public override void MiniGameStart()
     {
+        Debug.Log("ChildCrying Minigame");
         //Initialize title and description
         title = "Are We There Yet?";
         description = "The kids in the backseat are yelling at you. \n" +
@@ -44,7 +45,7 @@ public class ChildCryingMinigame : MiniGame
         PlayerPrefs.SetString("Title", title);
         PlayerPrefs.SetString("Description", description);
 
-        StressDelta = 0.034f;
+        StressDelta = 0.25f;
         ChildCry.startCrying();
         IsPlaying = true;
         IsComplete = false;

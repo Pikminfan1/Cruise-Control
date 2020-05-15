@@ -22,7 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
     public static float maxStress = 100;
     public float highestSpeed;
     public int minigamesCompleted;
-    public int stressMaxTime = 10;
+    public int stressMaxTime = 2;
     public float stressTime;
     private float avgTimer;
     private int avgInt = 100;
@@ -31,11 +31,21 @@ public class GameManager : MonoSingleton<GameManager>
     public static bool isThisGameOver = false;
     public AudioSource gameFX;
     public AudioClip[] gameSounds;
+    bool low, medium, high;
 
 
 
+    void restart()
+    {
+        isThisGameOver = false;
+        stress = 0;
+        maxStress = 100;
 
-
+        stressGrowthRate = 0f;
+        startTime = DateTime.Now;
+        //makes sure pause menu isn't on at the start
+        pauseMenu.GetComponentInChildren<Canvas>().enabled = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -87,8 +97,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void GameOver()
     {
+
         calculateScore();
-        Debug.Log("here");
+       // Debug.Log("here");
         gameOverCanvas.SetActive(true);
         //do anything else including propper menus reeset, etc
     }
@@ -96,7 +107,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void isGameOver()
     {
 
-        if ((int)stressTime > (int)stressMaxTime)
+        if (stressTime > (int)stressMaxTime)
         {
             isThisGameOver = true;
             GameOver();
@@ -106,7 +117,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void growStress()
     {
         stressGrowthRate = Mathf.Clamp(stressGrowthRate, 0, maxStressGrowthRate);
-        Debug.Log(stressAtMax);
+        //Debug.Log(stressAtMax);
         if (stress >= maxStress)
         {
             stressAtMax = true;
@@ -144,9 +155,50 @@ public class GameManager : MonoSingleton<GameManager>
     }
     bool tenCheck = true;
     //Update stress as long as its not above max, and not less than 0
+
+
+    void determineMusic()
+    {
+        if (stress < 33 && !low)
+        {
+
+            low = true;
+            high = false;
+            medium = false;
+            MusicManager.instance.pickTrack();
+        }
+        else
+        {
+            if (stress > 33 && stress < 66 && !medium)
+            {
+                medium = true;
+                low = false;
+                high = false;
+                MusicManager.instance.pickTrack();
+            }
+        }
+        if (stress > 66 && !high)
+        {
+            high = true;
+            low = false;
+            medium = false;
+            MusicManager.instance.pickTrack();
+        }
+        else
+        {
+            {
+
+            }
+        }
+    }
     void Update()
     {
-        
+        if(CarController.CurrentSpeed < 10&&!stressAtMax)
+        {
+            stress += 0.1f;
+        }
+        determineMusic();
+        //Debug.Log(ButtonActionManager.StartButtonIsDown);
         growStress();
         isGameOver();
         if (!isThisGameOver)
@@ -154,7 +206,7 @@ public class GameManager : MonoSingleton<GameManager>
             gameOverCanvas.SetActive(false);
             avergSpeed();
         }
-        Debug.Log("AtmaxStress: " + stressAtMax);
+        //Debug.Log("AtmaxStress: " + stressAtMax);
         time += Time.deltaTime;
         //Debug.Log(avgSpeed);
 

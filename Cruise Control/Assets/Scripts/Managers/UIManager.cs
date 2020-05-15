@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     {
         //toggles pause menu when esc is pressed
         if (Input.GetKeyDown("escape"))
-            GM.TogglePauseMenu();
+            GameManager.Instance.TogglePauseMenu();
     }
 
     //Music Settings Functions
@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
     {
         //Set volume based on music slider
         float val = _musicSlider.value;
-        MM.SetVolume(val);
+       // MM.SetVolume(val);
     }
 
     //Mutes/unmutes music
@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         else
             val = false;
         _musicSlider.interactable = val;
-        MM.SetVolume(val ? _musicSlider.value : 0f);
+        //MM.SetVolume(val ? _musicSlider.value : 0f);
         _musicToggle.Select();
         Debug.Log("Toggle: " + val);
     }

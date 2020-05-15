@@ -12,7 +12,7 @@ public class GetTimeUI : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isThisGameOver)
+        if (!GameManager.isThisGameOver&& Time.timeScale == 1.0f)
         {
             time = DateTime.Now - GameManager.startTime;
             GetComponent<UnityEngine.UI.Text>().text = formatTime();
