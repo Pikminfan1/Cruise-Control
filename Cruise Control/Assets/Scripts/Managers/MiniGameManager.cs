@@ -13,6 +13,12 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
     public int activeMiniGames = 0;
     public int maxActiveMiniGames = 2;
 
+    void updateMinigameCount()
+    {
+        Debug.Log(GameManager.Instance.minigamesCompleted);
+        GameManager.Instance.minigamesCompleted++;
+        return;
+    }
     void Update()
     {
         miniGameGlobalTimer += Time.deltaTime;
@@ -39,7 +45,16 @@ public class MiniGameManager : MonoSingleton<MiniGameManager>
            if(minigameList[i].IsPlaying)
             {
                 minigameList[i].Status();
-               
+
+            }
+            else
+            {
+                if (minigameList[i].IsComplete)
+                {
+                    
+                    minigameList[i].IsComplete = false;
+                    updateMinigameCount();
+                }
             }
         }
 
